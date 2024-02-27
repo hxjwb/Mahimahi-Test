@@ -1,0 +1,470 @@
+[000:000][334386] (conductor.cc:116): Conductor
+[000:000][334386] (fake_wnd.cc:156): AutoLogin server: 127.0.0.1 port: 8888
+[000:000][334386] (conductor.cc:463): StartLogin
+[000:100][334386] (peer_connection_localvideo.cc:288): Headers received
+[000:326][334389] (goog_cc_network_control.cc:714): bwe 2597281289 pushback_target_bps=300000 estimate_bps=300000
+[000:328][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 282640 stable bitrate = 282640 link allocation bitrate = 282640 packet loss 0 rtt 0
+[000:328][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 60, from VideoBitrateAllocation [ [282640] ], to VideoBitrateAllocation [ [235533] ]
+[000:439][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 28180 2597281279 2597281402 69c83783d79eae5cf4f09f1aba092246
+[000:552][334389] (goog_cc_network_control.cc:714): bwe 2597281515 pushback_target_bps=1812521 estimate_bps=1812521
+[000:552][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 28224 2597281381 2597281515 127e92a43deced045e57bc909fa1f1ca
+[000:644][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3748193 stable bitrate = 111617 link allocation bitrate = 3748193 packet loss 0 rtt 0
+[000:644][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [3748193] ], to VideoBitrateAllocation [ [3123494] ]
+[000:777][334389] (goog_cc_network_control.cc:714): bwe 2597281740 pushback_target_bps=3976546 estimate_bps=3976546
+[000:783][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 24031 2597281686 2597281746 34d01e3a876d9988dbf83b4714ed7834
+[000:851][334389] (goog_cc_network_control.cc:714): bwe 2597281814 pushback_target_bps=5884800 estimate_bps=5884800
+[000:877][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 19625 2597281787 2597281840 efa9e0bd3ed68cbab032e539f51656af
+[000:878][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5624502 stable bitrate = 127449 link allocation bitrate = 5624502 packet loss 0 rtt 3
+[000:878][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [5624502] ], to VideoBitrateAllocation [ [4687085] ]
+[000:976][334389] (goog_cc_network_control.cc:714): bwe 2597281940 pushback_target_bps=5884800 estimate_bps=5884800
+[000:977][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 25074 2597281889 2597281940 6443e3ff59f971d54ad9fd0c16ec06d9
+[001:077][334389] (goog_cc_network_control.cc:714): bwe 2597282041 pushback_target_bps=5884800 estimate_bps=5884800
+[001:079][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 32279 2597281991 2597282042 44f45058223970f366230adc35399077
+[001:176][334389] (goog_cc_network_control.cc:714): bwe 2597282140 pushback_target_bps=5884800 estimate_bps=5884800
+[001:180][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 34672 2597282092 2597282143 e55cb4d7a238de1f64b59bb93dd469f0
+[001:276][334389] (goog_cc_network_control.cc:714): bwe 2597282239 pushback_target_bps=5884800 estimate_bps=5884800
+[001:281][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 40976 2597282194 2597282244 5e7eafd58f01ce0a3b3f02fdc87299ac
+[001:333][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [5624502] ], to VideoBitrateAllocation [ [4687085] ]
+[001:377][334389] (goog_cc_network_control.cc:714): bwe 2597282340 pushback_target_bps=5884800 estimate_bps=5884800
+[001:381][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 36131 2597282295 2597282344 1210783ea8c4cd29dd9cc8ee140f6b55
+[001:477][334389] (goog_cc_network_control.cc:714): bwe 2597282441 pushback_target_bps=5884800 estimate_bps=5884800
+[001:486][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 62884 2597282397 2597282448 4371a4d9149ff0882c3bd4e14f799c13
+[001:576][334389] (goog_cc_network_control.cc:714): bwe 2597282539 pushback_target_bps=5884800 estimate_bps=5884800
+[001:586][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 56138 2597282498 2597282549 fb05a2648270481937221e438b9eda12
+[001:677][334389] (goog_cc_network_control.cc:714): bwe 2597282641 pushback_target_bps=5884800 estimate_bps=5884800
+[001:694][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 57180 2597282600 2597282657 120b2d0281520ebcb16c297c28461e90
+[001:695][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5623672 stable bitrate = 270071 link allocation bitrate = 5623672 packet loss 0 rtt 5
+[001:695][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [5623672] ], to VideoBitrateAllocation [ [4686393] ]
+[001:777][334389] (goog_cc_network_control.cc:714): bwe 2597282740 pushback_target_bps=5884800 estimate_bps=5884800
+[001:796][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 59449 2597282701 2597282759 e696803e71775cb781831c77de04500d
+[001:876][334389] (goog_cc_network_control.cc:714): bwe 2597282839 pushback_target_bps=5884800 estimate_bps=5884800
+[001:898][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 84022 2597282803 2597282860 481e1b4e5321e902fd86e7f9e758684b
+[001:978][334389] (goog_cc_network_control.cc:714): bwe 2597282941 pushback_target_bps=5892547 estimate_bps=5892547
+[001:994][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 67020 2597282904 2597282957 873627da5e34d70c2f3b17085cb030ae
+[001:995][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5630387 stable bitrate = 347554 link allocation bitrate = 5630387 packet loss 0 rtt 5
+[001:995][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5630387] ], to VideoBitrateAllocation [ [4691989] ]
+[002:077][334389] (goog_cc_network_control.cc:714): bwe 2597283041 pushback_target_bps=5916078 estimate_bps=5916078
+[002:092][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 49478 2597283006 2597283055 b2f24b72ea9577b737f8307ce8647384
+[002:112][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5674354 stable bitrate = 397541 link allocation bitrate = 5674354 packet loss 0 rtt 5
+[002:112][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [5674354] ], to VideoBitrateAllocation [ [4728628] ]
+[002:177][334389] (goog_cc_network_control.cc:714): bwe 2597283140 pushback_target_bps=5961993 estimate_bps=5961993
+[002:198][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 79882 2597283107 2597283161 0daaff64f116a8263b820157d5913d86
+[002:211][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5717711 stable bitrate = 433502 link allocation bitrate = 5717711 packet loss 0 rtt 5
+[002:211][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [5717711] ], to VideoBitrateAllocation [ [4764759] ]
+[002:276][334389] (goog_cc_network_control.cc:714): bwe 2597283240 pushback_target_bps=6008724 estimate_bps=6008724
+[002:296][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 82520 2597283209 2597283259 9b51001f4b88bef34b403ff699110381
+[002:313][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5762550 stable bitrate = 471138 link allocation bitrate = 5762550 packet loss 0 rtt 5
+[002:348][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [5762550] ], to VideoBitrateAllocation [ [4802125] ]
+[002:377][334389] (goog_cc_network_control.cc:714): bwe 2597283340 pushback_target_bps=6055929 estimate_bps=6055929
+[002:398][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 75285 2597283310 2597283361 887dbc5cc58df9b4332bc88144197c78
+[002:415][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5807625 stable bitrate = 512254 link allocation bitrate = 5807625 packet loss 0 rtt 5
+[002:415][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5807625] ], to VideoBitrateAllocation [ [4839688] ]
+[002:476][334389] (goog_cc_network_control.cc:714): bwe 2597283440 pushback_target_bps=6103005 estimate_bps=6103005
+[002:496][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 60885 2597283412 2597283459 ca0c09e66ee032c7d3e66161bcbf54ed
+[002:517][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5853635 stable bitrate = 558150 link allocation bitrate = 5853635 packet loss 0 rtt 5
+[002:517][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5853635] ], to VideoBitrateAllocation [ [4878029] ]
+[002:576][334389] (goog_cc_network_control.cc:714): bwe 2597283539 pushback_target_bps=6151773 estimate_bps=6151773
+[002:598][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 57948 2597283513 2597283560 c516722b9f12a2450be9c330816d0ba1
+[002:619][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5899667 stable bitrate = 604630 link allocation bitrate = 5899667 packet loss 0 rtt 5
+[002:619][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5899667] ], to VideoBitrateAllocation [ [4916389] ]
+[002:677][334389] (goog_cc_network_control.cc:714): bwe 2597283640 pushback_target_bps=6199277 estimate_bps=6199277
+[002:700][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 66101 2597283615 2597283663 f0d4e8868d1e19ac6817a214cfc90858
+[002:719][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5945337 stable bitrate = 650426 link allocation bitrate = 5945337 packet loss 0 rtt 5
+[002:719][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5945337] ], to VideoBitrateAllocation [ [4954448] ]
+[002:776][334389] (goog_cc_network_control.cc:714): bwe 2597283739 pushback_target_bps=6248163 estimate_bps=6248163
+[002:799][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 55136 2597283716 2597283762 8951a04cd19f9cba14b3d18a028e1d22
+[002:821][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5992138 stable bitrate = 696342 link allocation bitrate = 5992138 packet loss 0 rtt 49
+[002:821][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5992138] ], to VideoBitrateAllocation [ [4993448] ]
+[002:901][334389] (goog_cc_network_control.cc:714): bwe 2597283864 pushback_target_bps=6296720 estimate_bps=6296720
+[002:911][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 58954 2597283818 2597283874 653cc9099bd14425566fdf0d71123501
+[002:921][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6038542 stable bitrate = 740009 link allocation bitrate = 6038542 packet loss 0 rtt 49
+[002:921][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6038542] ], to VideoBitrateAllocation [ [5032118] ]
+[003:002][334389] (goog_cc_network_control.cc:714): bwe 2597283965 pushback_target_bps=6346211 estimate_bps=6346211
+[003:012][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 54506 2597283920 2597283974 4ad5406a706a4586de0c289b921a3206
+[003:024][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6086561 stable bitrate = 781205 link allocation bitrate = 6086561 packet loss 0 rtt 49
+[003:024][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6086561] ], to VideoBitrateAllocation [ [5072134] ]
+[003:102][334389] (goog_cc_network_control.cc:714): bwe 2597284066 pushback_target_bps=6395070 estimate_bps=6395070
+[003:107][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 52891 2597284022 2597284070 b7b7a9fb095534ee836cf311ee04ba57
+[003:124][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6133561 stable bitrate = 823284 link allocation bitrate = 6133561 packet loss 0 rtt 49
+[003:124][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6133561] ], to VideoBitrateAllocation [ [5111301] ]
+[003:202][334389] (goog_cc_network_control.cc:714): bwe 2597284166 pushback_target_bps=6445501 estimate_bps=6445501
+[003:209][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 64854 2597284124 2597284172 463351772c6307d76de0db92b59cea8a
+[003:225][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6181984 stable bitrate = 862753 link allocation bitrate = 6181984 packet loss 0 rtt 49
+[003:225][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6181984] ], to VideoBitrateAllocation [ [5151653] ]
+[003:302][334389] (goog_cc_network_control.cc:714): bwe 2597284266 pushback_target_bps=6495260 estimate_bps=6495260
+[003:309][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 51953 2597284226 2597284272 1fedb5761dab5876aae8b96be62f1267
+[003:325][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6229933 stable bitrate = 899326 link allocation bitrate = 6229933 packet loss 0 rtt 49
+[003:366][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [6229933] ], to VideoBitrateAllocation [ [5191611] ]
+[003:402][334389] (goog_cc_network_control.cc:714): bwe 2597284365 pushback_target_bps=6545785 estimate_bps=6545785
+[003:420][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 88049 2597284328 2597284383 95bca762443c01745b84b213ddb78fa5
+[003:427][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6279047 stable bitrate = 936304 link allocation bitrate = 6279047 packet loss 0 rtt 49
+[003:427][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [6279047] ], to VideoBitrateAllocation [ [5232539] ]
+[003:502][334389] (goog_cc_network_control.cc:714): bwe 2597284465 pushback_target_bps=6597164 estimate_bps=6597164
+[003:512][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 72669 2597284430 2597284475 756405a18694251a20f5d0f90ad94a45
+[003:527][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6327328 stable bitrate = 968977 link allocation bitrate = 6327328 packet loss 0 rtt 49
+[003:528][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6327328] ], to VideoBitrateAllocation [ [3163664] ]
+[003:602][334389] (goog_cc_network_control.cc:714): bwe 2597284565 pushback_target_bps=6649158 estimate_bps=6649158
+[003:617][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 38944 2597284532 2597284580 e793caeb596ee19706ad792b5b8f1d52
+[003:629][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6377108 stable bitrate = 1004226 link allocation bitrate = 6377108 packet loss 0 rtt 49
+[003:629][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6377108] ], to VideoBitrateAllocation [ [5868641] ]
+[003:702][334389] (goog_cc_network_control.cc:714): bwe 2597284665 pushback_target_bps=6700529 estimate_bps=6700529
+[003:725][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 81695 2597284634 2597284688 ddb424b07180140a9faef795ad23312c
+[003:726][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6401697 stable bitrate = 1020304 link allocation bitrate = 6401697 packet loss 0 rtt 49
+[003:726][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6401697] ], to VideoBitrateAllocation [ [5906969] ]
+[003:802][334389] (goog_cc_network_control.cc:714): bwe 2597284765 pushback_target_bps=6753375 estimate_bps=6753375
+[003:821][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 68891 2597284736 2597284783 d21cee06bccadfc05d911451ea41d78b
+[003:831][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6477043 stable bitrate = 1074094 link allocation bitrate = 6477043 packet loss 0 rtt 49
+[003:831][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6477043] ], to VideoBitrateAllocation [ [5960087] ]
+[003:927][334389] (goog_cc_network_control.cc:714): bwe 2597284890 pushback_target_bps=6805702 estimate_bps=6805702
+[003:929][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 60853 2597284838 2597284892 afbf343cdc8778e30fda82b3adb7b3ac
+[003:933][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6528195 stable bitrate = 1109081 link allocation bitrate = 6528195 packet loss 0 rtt 49
+[003:933][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6528195] ], to VideoBitrateAllocation [ [6007157] ]
+[004:002][334389] (goog_cc_network_control.cc:714): bwe 2597284965 pushback_target_bps=6859416 estimate_bps=6859416
+[004:023][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 65915 2597284940 2597284986 00406dd8e3afe13c549f99748d3a297e
+[004:051][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6578970 stable bitrate = 1152743 link allocation bitrate = 6578970 packet loss 0 rtt 3
+[004:051][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6578970] ], to VideoBitrateAllocation [ [6053879] ]
+[004:127][334389] (goog_cc_network_control.cc:714): bwe 2597285090 pushback_target_bps=6913309 estimate_bps=6913309
+[004:128][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 72990 2597285042 2597285090 40aa12fb26a91d33d1bf250ce2db355c
+[004:135][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6630218 stable bitrate = 1181649 link allocation bitrate = 6630218 packet loss 0 rtt 3
+[004:135][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6630218] ], to VideoBitrateAllocation [ [6101037] ]
+[004:227][334389] (goog_cc_network_control.cc:714): bwe 2597285191 pushback_target_bps=6966886 estimate_bps=6966886
+[004:228][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 70977 2597285144 2597285191 24e7e004c6497b61ab14635f8a790650
+[004:235][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6681822 stable bitrate = 1217316 link allocation bitrate = 6681822 packet loss 0 rtt 3
+[004:235][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6681822] ], to VideoBitrateAllocation [ [6148522] ]
+[004:327][334389] (goog_cc_network_control.cc:714): bwe 2597285290 pushback_target_bps=7020817 estimate_bps=7020817
+[004:334][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 68803 2597285246 2597285297 deced6a4ddf6e07a6fc7cdd0017a33e7
+[004:338][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6734344 stable bitrate = 1257063 link allocation bitrate = 6734344 packet loss 0 rtt 3
+[004:386][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6734344] ], to VideoBitrateAllocation [ [6179844] ]
+[004:427][334389] (goog_cc_network_control.cc:714): bwe 2597285391 pushback_target_bps=7076042 estimate_bps=7076042
+[004:436][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 72957 2597285348 2597285399 ce288d6edacab46af32e54f48c3bceb8
+[004:488][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6812791 stable bitrate = 1314555 link allocation bitrate = 6812791 packet loss 0 rtt 3
+[004:488][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6812791] ], to VideoBitrateAllocation [ [6251832] ]
+[004:539][334389] (goog_cc_network_control.cc:714): bwe 2597285502 pushback_target_bps=7158871 estimate_bps=7158871
+[004:540][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 76343 2597285450 2597285503 b256238dd2679004fbbbb69108209f23
+[004:589][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6866166 stable bitrate = 1351691 link allocation bitrate = 6866166 packet loss 0 rtt 3
+[004:589][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6866166] ], to VideoBitrateAllocation [ [6300812] ]
+[004:639][334389] (goog_cc_network_control.cc:714): bwe 2597285602 pushback_target_bps=7214649 estimate_bps=7214649
+[004:645][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 66920 2597285552 2597285607 0b6800048c10e04d6ef580de03810925
+[004:689][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6918963 stable bitrate = 1389846 link allocation bitrate = 6918963 packet loss 0 rtt 3
+[004:689][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6918963] ], to VideoBitrateAllocation [ [6366736] ]
+[004:741][334389] (goog_cc_network_control.cc:714): bwe 2597285704 pushback_target_bps=7271106 estimate_bps=7271106
+[004:751][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 83668 2597285654 2597285714 f4b147d0e2ba7a4efc01a8f5763cc3fd
+[004:792][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 6973494 stable bitrate = 1427704 link allocation bitrate = 6973494 packet loss 0 rtt 3
+[004:792][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [6973494] ], to VideoBitrateAllocation [ [6416915] ]
+[004:841][334389] (goog_cc_network_control.cc:714): bwe 2597285804 pushback_target_bps=7327439 estimate_bps=7327439
+[004:852][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 70954 2597285756 2597285815 693ea89aca1b28bf378306bb48e3e9f0
+[004:892][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7027830 stable bitrate = 1464885 link allocation bitrate = 7027830 packet loss 0 rtt 3
+[004:892][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7027830] ], to VideoBitrateAllocation [ [6466914] ]
+[004:952][334389] (goog_cc_network_control.cc:714): bwe 2597285915 pushback_target_bps=7384953 estimate_bps=7384953
+[004:958][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 61632 2597285858 2597285921 f01ba2757462aeddb50e3961e1f8981f
+[004:993][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7082808 stable bitrate = 1502816 link allocation bitrate = 7082808 packet loss 0 rtt 3
+[004:993][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7082808] ], to VideoBitrateAllocation [ [6517504] ]
+[005:053][334389] (goog_cc_network_control.cc:714): bwe 2597286016 pushback_target_bps=7442432 estimate_bps=7442432
+[005:053][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 67066 2597285960 2597286016 5eaab24382884b3a11023031f5471ea5
+[005:095][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7138812 stable bitrate = 1540917 link allocation bitrate = 7138812 packet loss 0 rtt 3
+[005:095][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7138812] ], to VideoBitrateAllocation [ [6642295] ]
+[005:145][334389] (goog_cc_network_control.cc:714): bwe 2597286108 pushback_target_bps=7501113 estimate_bps=7501113
+[005:150][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 84052 2597286062 2597286113 20ada4b1a646e4c2fbcf620c5624ea7a
+[005:196][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7194134 stable bitrate = 1577846 link allocation bitrate = 7194134 packet loss 0 rtt 3
+[005:196][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7194134] ], to VideoBitrateAllocation [ [6709324] ]
+[005:252][334389] (goog_cc_network_control.cc:714): bwe 2597286216 pushback_target_bps=7558832 estimate_bps=7558832
+[005:253][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 74557 2597286164 2597286216 d3ef4a390facc73539eb14fb38807f34
+[005:297][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7250637 stable bitrate = 1615269 link allocation bitrate = 7250637 packet loss 0 rtt 3
+[005:297][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7250637] ], to VideoBitrateAllocation [ [6762019] ]
+[005:352][334389] (goog_cc_network_control.cc:714): bwe 2597286315 pushback_target_bps=7612618 estimate_bps=7612618
+[005:358][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 81364 2597286266 2597286320 7e40d7720cc2eb891f401959b855f469
+[005:397][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7306079 stable bitrate = 1651703 link allocation bitrate = 7306079 packet loss 0 rtt 53
+[005:406][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7306079] ], to VideoBitrateAllocation [ [6941661] ]
+[005:452][334389] (goog_cc_network_control.cc:714): bwe 2597286416 pushback_target_bps=7677258 estimate_bps=7677258
+[005:461][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 79082 2597286368 2597286424 f95f61735d2fd088753f83972ed86bb3
+[005:498][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7363286 stable bitrate = 1688784 link allocation bitrate = 7363286 packet loss 0 rtt 53
+[005:499][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7363286] ], to VideoBitrateAllocation [ [7059646] ]
+[005:551][334389] (goog_cc_network_control.cc:714): bwe 2597286514 pushback_target_bps=7736847 estimate_bps=7736847
+[005:563][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 86895 2597286470 2597286526 85b726ebcfa8ef769ec4aa77058c6275
+[005:597][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7418350 stable bitrate = 1726426 link allocation bitrate = 7418350 packet loss 0 rtt 53
+[005:597][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7418350] ], to VideoBitrateAllocation [ [7122229] ]
+[005:652][334389] (goog_cc_network_control.cc:714): bwe 2597286615 pushback_target_bps=7764870 estimate_bps=7764870
+[005:665][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 83526 2597286572 2597286628 31e28985f8af6a77536e76090794c410
+[005:700][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7478531 stable bitrate = 1764862 link allocation bitrate = 7478531 packet loss 0 rtt 53
+[005:700][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7478531] ], to VideoBitrateAllocation [ [7180008] ]
+[005:751][334389] (goog_cc_network_control.cc:714): bwe 2597286714 pushback_target_bps=7858048 estimate_bps=7858048
+[005:767][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 80347 2597286674 2597286730 2d4e812254c83088889c4e0ea3c3abd9
+[005:800][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7536421 stable bitrate = 1802620 link allocation bitrate = 7536421 packet loss 0 rtt 53
+[005:800][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7536421] ], to VideoBitrateAllocation [ [7225641] ]
+[005:851][334389] (goog_cc_network_control.cc:714): bwe 2597286815 pushback_target_bps=7919693 estimate_bps=7919693
+[005:870][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 79174 2597286776 2597286833 b66f06177805a4051b056d096fdc1960
+[005:901][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7566591 stable bitrate = 1843618 link allocation bitrate = 7566591 packet loss 0 rtt 53
+[005:901][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7566591] ], to VideoBitrateAllocation [ [7264553] ]
+[005:977][334389] (goog_cc_network_control.cc:714): bwe 2597286941 pushback_target_bps=7920167 estimate_bps=7920167
+[005:981][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 82792 2597286884 2597286944 07213c9d01fb9a03fcbe880e22baefbc
+[006:001][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7653895 stable bitrate = 1881783 link allocation bitrate = 7653895 packet loss 0 rtt 53
+[006:001][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7653895] ], to VideoBitrateAllocation [ [7348372] ]
+[006:076][334389] (goog_cc_network_control.cc:714): bwe 2597287039 pushback_target_bps=8042678 estimate_bps=8042678
+[006:080][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 79120 2597286986 2597287043 f085e1feb0154210bc614e27a7970cb0
+[006:102][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 7713486 stable bitrate = 1920672 link allocation bitrate = 7713486 packet loss 0 rtt 53
+[006:102][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [7713486] ], to VideoBitrateAllocation [ [7405584] ]
+[006:177][334389] (goog_cc_network_control.cc:714): bwe 2597287141 pushback_target_bps=8078570 estimate_bps=8078570
+[006:179][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 86561 2597287088 2597287142 24f3ff0e18d3ba224394997adeb23282
+[006:204][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5520360 stable bitrate = 2065084 link allocation bitrate = 5520360 packet loss 0 rtt 53
+[006:204][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5520360] ], to VideoBitrateAllocation [ [5300002] ]
+[006:253][334389] (goog_cc_network_control.cc:714): bwe 2597287216 pushback_target_bps=5802392 estimate_bps=5802392
+[006:274][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 54961 2597287190 2597287237 30a28477a487d8571e7778fc5b986745
+[006:303][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5563604 stable bitrate = 2098123 link allocation bitrate = 5563604 packet loss 0 rtt 18
+[006:303][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5563604] ], to VideoBitrateAllocation [ [5324364] ]
+[006:402][334389] (goog_cc_network_control.cc:714): bwe 2597287366 pushback_target_bps=5848162 estimate_bps=5848162
+[006:404][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 180692 2597287292 2597287367 29cb48ebcd4917fe0f187c5fb0c57224
+[006:406][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5606578 stable bitrate = 2130497 link allocation bitrate = 5606578 packet loss 0 rtt 18
+[006:433][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5606578] ], to VideoBitrateAllocation [ [5357546] ]
+[006:476][334389] (goog_cc_network_control.cc:714): bwe 2597287440 pushback_target_bps=5893302 estimate_bps=5893302
+[006:485][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 84300 2597287394 2597287448 f6e8dbf6e892f4c86f180d96106b9aac
+[006:507][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5650490 stable bitrate = 2163575 link allocation bitrate = 5650490 packet loss 0 rtt 18
+[006:507][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5650490] ], to VideoBitrateAllocation [ [5098838] ]
+[006:577][334389] (goog_cc_network_control.cc:714): bwe 2597287540 pushback_target_bps=5939850 estimate_bps=5939850
+[006:588][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 88386 2597287497 2597287551 6b78fee35810e37432b62730e8fd478d
+[006:608][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5694831 stable bitrate = 2196925 link allocation bitrate = 5694831 packet loss 0 rtt 18
+[006:608][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5694831] ], to VideoBitrateAllocation [ [5151440] ]
+[006:677][334389] (goog_cc_network_control.cc:714): bwe 2597287641 pushback_target_bps=5985417 estimate_bps=5985417
+[006:689][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 84390 2597287599 2597287652 eaebdfcca78eae0362939c809e50e834
+[006:707][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5738354 stable bitrate = 2229395 link allocation bitrate = 5738354 packet loss 0 rtt 18
+[006:707][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5738354] ], to VideoBitrateAllocation [ [5257340] ]
+[006:776][334389] (goog_cc_network_control.cc:714): bwe 2597287740 pushback_target_bps=6031699 estimate_bps=6031699
+[006:790][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 63187 2597287701 2597287753 18b4f35bcbdf6ef93d515423d53291c9
+[006:809][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5783632 stable bitrate = 2263058 link allocation bitrate = 5783632 packet loss 0 rtt 18
+[006:809][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5783632] ], to VideoBitrateAllocation [ [5260846] ]
+[006:877][334389] (goog_cc_network_control.cc:714): bwe 2597287840 pushback_target_bps=6079533 estimate_bps=6079533
+[006:897][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 70222 2597287803 2597287860 bf75b76c04f7b2b928470fcbb17210a9
+[006:909][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5828266 stable bitrate = 2296067 link allocation bitrate = 5828266 packet loss 0 rtt 18
+[006:909][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5828266] ], to VideoBitrateAllocation [ [5315870] ]
+[006:977][334389] (goog_cc_network_control.cc:714): bwe 2597287940 pushback_target_bps=6127394 estimate_bps=6127394
+[006:993][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 58375 2597287904 2597287956 289c82fdc6883f617e7be39fec6b47b0
+[007:011][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5874697 stable bitrate = 2330288 link allocation bitrate = 5874697 packet loss 0 rtt 18
+[007:011][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5874697] ], to VideoBitrateAllocation [ [5358219] ]
+[007:077][334389] (goog_cc_network_control.cc:714): bwe 2597288040 pushback_target_bps=6175743 estimate_bps=6175743
+[007:097][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 61952 2597288006 2597288059 e584534efd92a220fdffb59ed011c03b
+[007:113][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5920998 stable bitrate = 2364240 link allocation bitrate = 5920998 packet loss 0 rtt 145
+[007:113][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5920998] ], to VideoBitrateAllocation [ [5400449] ]
+[007:177][334389] (goog_cc_network_control.cc:714): bwe 2597288140 pushback_target_bps=6224313 estimate_bps=6224313
+[007:198][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 67248 2597288107 2597288161 fe2186b50ed39e86bbf95c8880e7ea12
+[007:217][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5968709 stable bitrate = 2399080 link allocation bitrate = 5968709 packet loss 0 rtt 145
+[007:217][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5968709] ], to VideoBitrateAllocation [ [5443965] ]
+[007:276][334389] (goog_cc_network_control.cc:714): bwe 2597288239 pushback_target_bps=6249069 estimate_bps=6249069
+[007:298][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 65384 2597288209 2597288261 bace4a4ea0abc4c61e1a795de445f23e
+[007:376][334389] (goog_cc_network_control.cc:714): bwe 2597288339 pushback_target_bps=5090725 estimate_bps=5090725
+[007:401][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 69696 2597288310 2597288363 b62736466a76ff77cc23d55558baf7f0
+[007:402][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4861269 stable bitrate = 2497590 link allocation bitrate = 4861269 packet loss 0 rtt 145
+[007:450][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4861269] ], to VideoBitrateAllocation [ [4420486] ]
+[007:501][334389] (goog_cc_network_control.cc:714): bwe 2597288464 pushback_target_bps=5090725 estimate_bps=5090725
+[007:509][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 75306 2597288412 2597288472 f33ae8ece39cb43d58240e895e3f637c
+[007:601][334389] (goog_cc_network_control.cc:714): bwe 2597288564 pushback_target_bps=5090725 estimate_bps=5090725
+[007:610][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 77152 2597288513 2597288573 b434998747f6c7b84eba9c0dd450161d
+[007:701][334389] (goog_cc_network_control.cc:714): bwe 2597288664 pushback_target_bps=4490709 estimate_bps=4490709
+[007:704][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 78324 2597288615 2597288667 96471f915822f76700793c4113be83d1
+[007:723][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4289541 stable bitrate = 2598893 link allocation bitrate = 4289541 packet loss 0 rtt 145
+[007:723][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4289541] ], to VideoBitrateAllocation [ [3800448] ]
+[007:801][334389] (goog_cc_network_control.cc:714): bwe 2597288764 pushback_target_bps=4509510 estimate_bps=4509510
+[007:812][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 81060 2597288716 2597288775 e631f04a4d2a7a5d05111945c03e9941
+[007:824][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4323009 stable bitrate = 2614470 link allocation bitrate = 4323009 packet loss 0 rtt 145
+[007:824][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4323009] ], to VideoBitrateAllocation [ [3764636] ]
+[007:902][334389] (goog_cc_network_control.cc:714): bwe 2597288865 pushback_target_bps=4544650 estimate_bps=4544650
+[007:913][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 73649 2597288818 2597288876 43edd645ae940ee8f7955628102b57f1
+[007:925][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4356621 stable bitrate = 2629996 link allocation bitrate = 4356621 packet loss 0 rtt 145
+[007:925][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4356621] ], to VideoBitrateAllocation [ [3716975] ]
+[008:001][334389] (goog_cc_network_control.cc:714): bwe 2597288964 pushback_target_bps=4580369 estimate_bps=4580369
+[008:012][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 52485 2597288919 2597288975 04f968cf2659d91e365d4162065b2402
+[008:027][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4391064 stable bitrate = 2646009 link allocation bitrate = 4391064 packet loss 0 rtt 145
+[008:027][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4391064] ], to VideoBitrateAllocation [ [3683960] ]
+[008:103][334389] (goog_cc_network_control.cc:714): bwe 2597289066 pushback_target_bps=4615871 estimate_bps=4615871
+[008:109][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 49226 2597289021 2597289072 4a18b8efd8955671c2ddcd197f112c48
+[008:129][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4426011 stable bitrate = 2662561 link allocation bitrate = 4426011 packet loss 0 rtt 145
+[008:129][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4426011] ], to VideoBitrateAllocation [ [3695675] ]
+[008:202][334389] (goog_cc_network_control.cc:714): bwe 2597289165 pushback_target_bps=4652370 estimate_bps=4652370
+[008:209][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 42764 2597289122 2597289172 0409c028a2c51d7bb3b22d16d90b425c
+[008:229][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4460351 stable bitrate = 2678685 link allocation bitrate = 4460351 packet loss 0 rtt 145
+[008:229][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4460351] ], to VideoBitrateAllocation [ [3724348] ]
+[008:302][334389] (goog_cc_network_control.cc:714): bwe 2597289266 pushback_target_bps=4688921 estimate_bps=4688921
+[008:310][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 41054 2597289223 2597289273 77826729292abfab0c75aaa4d0b815a4
+[008:333][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4496182 stable bitrate = 2695583 link allocation bitrate = 4496182 packet loss 0 rtt 145
+[008:333][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4496182] ], to VideoBitrateAllocation [ [3754267] ]
+[008:402][334389] (goog_cc_network_control.cc:714): bwe 2597289365 pushback_target_bps=4725955 estimate_bps=4725955
+[008:412][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 43204 2597289325 2597289374 89f0dd6461a20bcc547a1c209d9af6b9
+[008:433][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4531677 stable bitrate = 2712595 link allocation bitrate = 4531677 packet loss 0 rtt 145
+[008:465][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4531677] ], to VideoBitrateAllocation [ [3762496] ]
+[008:501][334389] (goog_cc_network_control.cc:714): bwe 2597289464 pushback_target_bps=4762993 estimate_bps=4762993
+[008:511][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 43961 2597289427 2597289473 d9118fe6ee454bbd053968f6edf3ebe3
+[008:511][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4549649 stable bitrate = 2721073 link allocation bitrate = 4549649 packet loss 0 rtt 42
+[008:511][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4549649] ], to VideoBitrateAllocation [ [3798911] ]
+[008:602][334389] (goog_cc_network_control.cc:714): bwe 2597289566 pushback_target_bps=4762993 estimate_bps=4762993
+[008:614][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 46098 2597289528 2597289576 555ceb6f2019c8ce169352f10999e8e0
+[008:701][334389] (goog_cc_network_control.cc:714): bwe 2597289665 pushback_target_bps=4762993 estimate_bps=4762993
+[008:720][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 44645 2597289630 2597289683 31bada731aedab6db3d9802da64d09bf
+[008:803][334389] (goog_cc_network_control.cc:714): bwe 2597289766 pushback_target_bps=4762993 estimate_bps=4762993
+[008:815][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 47356 2597289731 2597289778 47989fb207ebe791dce5a4eff1cae1c3
+[008:901][334389] (goog_cc_network_control.cc:714): bwe 2597289865 pushback_target_bps=4762993 estimate_bps=4762993
+[008:915][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 41215 2597289832 2597289878 9e417881ebfe7f48d3f2993c2091baad
+[008:941][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4551745 stable bitrate = 2796423 link allocation bitrate = 4551745 packet loss 0 rtt 42
+[008:941][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4551745] ], to VideoBitrateAllocation [ [3800661] ]
+[009:001][334389] (goog_cc_network_control.cc:714): bwe 2597289964 pushback_target_bps=4782978 estimate_bps=4782978
+[009:020][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 45895 2597289934 2597289983 5a52fc1594f20982a0bd75f624703ca8
+[009:021][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4569866 stable bitrate = 2801013 link allocation bitrate = 4569866 packet loss 0 rtt 42
+[009:021][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4569866] ], to VideoBitrateAllocation [ [3815792] ]
+[009:102][334389] (goog_cc_network_control.cc:714): bwe 2597290065 pushback_target_bps=4782978 estimate_bps=4782978
+[009:121][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 45984 2597290036 2597290084 157887f3e89d2ab105c519e07a11c9b3
+[009:146][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4570922 stable bitrate = 2812230 link allocation bitrate = 4570922 packet loss 0 rtt 42
+[009:146][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4570922] ], to VideoBitrateAllocation [ [3816674] ]
+[009:202][334389] (goog_cc_network_control.cc:714): bwe 2597290166 pushback_target_bps=4802164 estimate_bps=4802164
+[009:219][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 45333 2597290137 2597290182 33c44ab8c8ce8fbe995a6e1b578e8e44
+[009:219][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4588244 stable bitrate = 2814116 link allocation bitrate = 4588244 packet loss 0 rtt 42
+[009:219][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4588244] ], to VideoBitrateAllocation [ [3831138] ]
+[009:301][334389] (goog_cc_network_control.cc:714): bwe 2597290265 pushback_target_bps=4802164 estimate_bps=4802164
+[009:320][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 43642 2597290239 2597290283 ae37d63f79b0b62d7c32dc58f1d066cc
+[009:350][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4589212 stable bitrate = 2822527 link allocation bitrate = 4589212 packet loss 0 rtt 42
+[009:350][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4589212] ], to VideoBitrateAllocation [ [3842714] ]
+[009:401][334389] (goog_cc_network_control.cc:714): bwe 2597290364 pushback_target_bps=4821763 estimate_bps=4821763
+[009:422][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 46102 2597290341 2597290385 b2c8742261d424e9f18636dfeb8cb638
+[009:449][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4625329 stable bitrate = 2826691 link allocation bitrate = 4625329 packet loss 0 rtt 42
+[009:480][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4625329] ], to VideoBitrateAllocation [ [3872956] ]
+[009:501][334389] (goog_cc_network_control.cc:714): bwe 2597290465 pushback_target_bps=4859796 estimate_bps=4859796
+[009:522][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 42276 2597290442 2597290485 e955cc466ebd1741954d02a8200278f7
+[009:549][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4661154 stable bitrate = 2831031 link allocation bitrate = 4661154 packet loss 0 rtt 74
+[009:549][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4661154] ], to VideoBitrateAllocation [ [4121252] ]
+[009:602][334389] (goog_cc_network_control.cc:714): bwe 2597290566 pushback_target_bps=4897495 estimate_bps=4897495
+[009:626][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 49224 2597290544 2597290589 457c48d1ed4860755862b32899d0efc1
+[009:649][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4696986 stable bitrate = 2835212 link allocation bitrate = 4696986 packet loss 0 rtt 74
+[009:649][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4696986] ], to VideoBitrateAllocation [ [4189171] ]
+[009:726][334389] (goog_cc_network_control.cc:714): bwe 2597290689 pushback_target_bps=4935230 estimate_bps=4935230
+[009:728][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 47507 2597290645 2597290691 cf3e3a2ea66b0871023d3d12dec4b46b
+[009:752][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4734071 stable bitrate = 2839764 link allocation bitrate = 4734071 packet loss 0 rtt 74
+[009:753][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4734071] ], to VideoBitrateAllocation [ [4268357] ]
+[009:827][334389] (goog_cc_network_control.cc:714): bwe 2597290791 pushback_target_bps=4973995 estimate_bps=4973995
+[009:829][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 50830 2597290747 2597290792 3f90944b7af95674c0192a8b03c5bf43
+[009:851][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4770759 stable bitrate = 2844074 link allocation bitrate = 4770759 packet loss 0 rtt 74
+[009:851][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4770759] ], to VideoBitrateAllocation [ [4332212] ]
+[009:926][334389] (goog_cc_network_control.cc:714): bwe 2597290890 pushback_target_bps=5013328 estimate_bps=5013328
+[009:928][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 50484 2597290848 2597290891 904c12661b154557d1a328b30ca745a6
+[009:956][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4808770 stable bitrate = 2848866 link allocation bitrate = 4808770 packet loss 0 rtt 74
+[009:957][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4808770] ], to VideoBitrateAllocation [ [4366729] ]
+[010:027][334389] (goog_cc_network_control.cc:714): bwe 2597290990 pushback_target_bps=5052956 estimate_bps=5052956
+[010:031][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 52574 2597290950 2597290994 a8bbccab0fb701c8129f961f9cf4d092
+[010:055][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4846143 stable bitrate = 2853673 link allocation bitrate = 4846143 packet loss 0 rtt 74
+[010:055][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4846143] ], to VideoBitrateAllocation [ [4400667] ]
+[010:127][334389] (goog_cc_network_control.cc:714): bwe 2597291091 pushback_target_bps=5092642 estimate_bps=5092642
+[010:132][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 52262 2597291051 2597291094 aec7820645beb17ea4eccbe0dfe9190a
+[010:157][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4884163 stable bitrate = 2858205 link allocation bitrate = 4884163 packet loss 0 rtt 74
+[010:157][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4884163] ], to VideoBitrateAllocation [ [4435192] ]
+[010:226][334389] (goog_cc_network_control.cc:714): bwe 2597291190 pushback_target_bps=5131913 estimate_bps=5131913
+[010:234][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 54451 2597291153 2597291197 aea5fc4d57547dfa22702207a2ab400b
+[010:257][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4922088 stable bitrate = 2862582 link allocation bitrate = 4922088 packet loss 0 rtt 74
+[010:257][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4922088] ], to VideoBitrateAllocation [ [4469631] ]
+[010:327][334389] (goog_cc_network_control.cc:714): bwe 2597291290 pushback_target_bps=5172256 estimate_bps=5172256
+[010:334][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 53506 2597291255 2597291297 3ff71f0fcff9bbd7a7201c9b4015f573
+[010:359][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4960672 stable bitrate = 2867123 link allocation bitrate = 4960672 packet loss 0 rtt 74
+[010:359][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4960672] ], to VideoBitrateAllocation [ [4504668] ]
+[010:427][334389] (goog_cc_network_control.cc:714): bwe 2597291391 pushback_target_bps=5212463 estimate_bps=5212463
+[010:437][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 49741 2597291356 2597291400 22acd1587486703e5f7d1d31dfc1982e
+[010:461][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 4999920 stable bitrate = 2871625 link allocation bitrate = 4999920 packet loss 0 rtt 74
+[010:496][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [4999920] ], to VideoBitrateAllocation [ [4540308] ]
+[010:527][334389] (goog_cc_network_control.cc:714): bwe 2597291491 pushback_target_bps=5253582 estimate_bps=5253582
+[010:541][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 57677 2597291458 2597291504 b05d0dfc8186b10bd4bed361fe0c6ba3
+[010:561][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5038735 stable bitrate = 2875918 link allocation bitrate = 5038735 packet loss 0 rtt 74
+[010:562][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5038735] ], to VideoBitrateAllocation [ [4599209] ]
+[010:626][334389] (goog_cc_network_control.cc:714): bwe 2597291590 pushback_target_bps=5294010 estimate_bps=5294010
+[010:644][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 55264 2597291559 2597291606 0fb0409189dd928e3bd93a65e4646882
+[010:677][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5077745 stable bitrate = 2880701 link allocation bitrate = 5077745 packet loss 0 rtt 182
+[010:677][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5077745] ], to VideoBitrateAllocation [ [4683680] ]
+[010:727][334389] (goog_cc_network_control.cc:714): bwe 2597291691 pushback_target_bps=5335666 estimate_bps=5335666
+[010:749][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 60606 2597291661 2597291712 9160773390256a1159a5e8cac4339ed8
+[010:763][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5117334 stable bitrate = 2884070 link allocation bitrate = 5117334 packet loss 0 rtt 182
+[010:763][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5117334] ], to VideoBitrateAllocation [ [4787361] ]
+[010:827][334389] (goog_cc_network_control.cc:714): bwe 2597291790 pushback_target_bps=5377154 estimate_bps=5377154
+[010:849][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 53356 2597291762 2597291812 c92bff82e270089ae1881586b302406e
+[010:865][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5157711 stable bitrate = 2888356 link allocation bitrate = 5157711 packet loss 0 rtt 182
+[010:865][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5157711] ], to VideoBitrateAllocation [ [4915389] ]
+[010:952][334389] (goog_cc_network_control.cc:714): bwe 2597291915 pushback_target_bps=5419539 estimate_bps=5419539
+[010:956][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 61117 2597291864 2597291919 8986cd348616dd238657b335456389a1
+[010:965][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5197524 stable bitrate = 2892457 link allocation bitrate = 5197524 packet loss 0 rtt 182
+[010:965][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5197524] ], to VideoBitrateAllocation [ [5068128] ]
+[011:051][334389] (goog_cc_network_control.cc:714): bwe 2597292014 pushback_target_bps=5461378 estimate_bps=5461378
+[011:053][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 61532 2597291966 2597292016 22a7433a54d13afa5fa7939ba51376c1
+[011:053][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 5217786 stable bitrate = 2894569 link allocation bitrate = 5217786 packet loss 0 rtt 182
+[011:053][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [5217786] ], to VideoBitrateAllocation [ [5188327] ]
+[011:151][334389] (goog_cc_network_control.cc:714): bwe 2597292114 pushback_target_bps=5461378 estimate_bps=5461378
+[011:156][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 56359 2597292067 2597292119 648b0a856e323c98532687140bdb77e1
+[011:252][334389] (goog_cc_network_control.cc:714): bwe 2597292216 pushback_target_bps=3158158 estimate_bps=3158158
+[011:254][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 64760 2597292169 2597292217 04fdb03ff34bf88ffcaefffdde13d044
+[011:255][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3015558 stable bitrate = 3006376 link allocation bitrate = 3015558 packet loss 0 rtt 182
+[011:255][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [3015558] ], to VideoBitrateAllocation [ [3015558] ]
+[011:351][334389] (goog_cc_network_control.cc:714): bwe 2597292314 pushback_target_bps=243004 estimate_bps=3158158
+[011:361][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 59223 2597292270 2597292324 b81666a14e3e1758ea9cd250cac8317a
+[011:365][334389] (goog_cc_network_control.cc:714): bwe 2597292326 pushback_target_bps=30000 estimate_bps=3158158
+[011:466][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 60860 2597292372 2597292429 0a0156aa6e6361fe3331479ee31da34d
+[011:511][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [3015558] ], to VideoBitrateAllocation [ [2903105] ]
+[011:560][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 56767 2597292473 2597292523 022bb042a4a056d56e9ab9d8095d8fbb
+[011:621][334389] (goog_cc_network_control.cc:714): bwe 2597292584 pushback_target_bps=30000 estimate_bps=3155496
+[011:665][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 59911 2597292575 2597292628 f252b305ef71ff3554566c12c2ec7bd3
+[011:666][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 1506360 stable bitrate = 3012720 link allocation bitrate = 3012720 packet loss 0 rtt 182
+[011:666][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 10, from VideoBitrateAllocation [ [1506360] ], to VideoBitrateAllocation [ [1506360] ]
+[011:789][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 62796 2597292677 2597292752 fffa5f2d5f5ae8353fe690f429250976
+[011:951][334389] (goog_cc_network_control.cc:714): bwe 2597292914 pushback_target_bps=30000 estimate_bps=3155496
+[011:975][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 68721 2597292880 2597292938 154d72ccbaa3768a247e092398c594ba
+[011:976][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 1506500 stable bitrate = 3013000 link allocation bitrate = 3013000 packet loss 0 rtt 398
+[011:976][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 9, from VideoBitrateAllocation [ [1506500] ], to VideoBitrateAllocation [ [1490566] ]
+[012:187][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 38753 2597293083 2597293150 e88ec70ea6bbdb33fb324ba329171b30
+[012:382][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 44789 2597293286 2597293345 a547916c7c49ca84cfb57f7f91334706
+[012:527][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [1506500] ], to VideoBitrateAllocation [ [1417727] ]
+[012:605][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 70726 2597293489 2597293567 649ca549012c90618eac6bcc4062bbb7
+[012:676][334389] (goog_cc_network_control.cc:714): bwe 2597293639 pushback_target_bps=30000 estimate_bps=3155496
+[012:676][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 1507308 stable bitrate = 3014616 link allocation bitrate = 3014616 packet loss 0 rtt 284
+[012:676][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [1507308] ], to VideoBitrateAllocation [ [1410706] ]
+[012:775][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 10548 2597293693 2597293738 4a7d605235020d18c06d29d0509046b2
+[012:933][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3016850 stable bitrate = 3009494 link allocation bitrate = 3016850 packet loss 0 rtt 284
+[012:933][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3016850] ], to VideoBitrateAllocation [ [2179006] ]
+[012:984][334389] (goog_cc_network_control.cc:714): bwe 2597293946 pushback_target_bps=3158016 estimate_bps=3158016
+[012:992][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 45119 2597293896 2597293955 2356f5b09eb8d662a5bd49c176213893
+[013:033][334389] (goog_cc_network_control.cc:714): bwe 2597293996 pushback_target_bps=3158630 estimate_bps=3158630
+[013:033][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3018254 stable bitrate = 3009654 link allocation bitrate = 3018254 packet loss 0 rtt 284
+[013:033][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3018254] ], to VideoBitrateAllocation [ [2205542] ]
+[013:082][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 35121 2597293997 2597294045 0b8bfa5e35fb074c897234cf311e9efc
+[013:133][334389] (goog_cc_network_control.cc:714): bwe 2597294096 pushback_target_bps=3159882 estimate_bps=3159882
+[013:133][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3019306 stable bitrate = 3009454 link allocation bitrate = 3019306 packet loss 0 rtt 284
+[013:133][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3019306] ], to VideoBitrateAllocation [ [2167937] ]
+[013:183][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 38483 2597294099 2597294146 0d0b1278d27da4c859130cdca441fda0
+[013:235][334389] (goog_cc_network_control.cc:714): bwe 2597294198 pushback_target_bps=3161148 estimate_bps=3161148
+[013:235][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3020580 stable bitrate = 3009462 link allocation bitrate = 3020580 packet loss 0 rtt 284
+[013:235][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3020580] ], to VideoBitrateAllocation [ [2154096] ]
+[013:284][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 35001 2597294200 2597294247 42d0474a0df91f0fb9b6684125350d5a
+[013:337][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3021652 stable bitrate = 3009262 link allocation bitrate = 3021652 packet loss 0 rtt 284
+[013:337][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3021652] ], to VideoBitrateAllocation [ [2106675] ]
+[013:387][334389] (goog_cc_network_control.cc:714): bwe 2597294350 pushback_target_bps=3163045 estimate_bps=3163045
+[013:389][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 36255 2597294302 2597294352 b917f285df9d9408067e487b2aa5f9f6
+[013:437][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3022528 stable bitrate = 3008894 link allocation bitrate = 3022528 packet loss 0 rtt 284
+[013:437][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3022528] ], to VideoBitrateAllocation [ [2120117] ]
+[013:487][334389] (goog_cc_network_control.cc:714): bwe 2597294450 pushback_target_bps=3164290 estimate_bps=3164290
+[013:492][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 36260 2597294403 2597294455 e170de962423ee81dacc397c68a2ae9c
+[013:492][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3023154 stable bitrate = 3008894 link allocation bitrate = 3023154 packet loss 0 rtt 284
+[013:543][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3023154] ], to VideoBitrateAllocation [ [2076472] ]
+[013:590][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 37822 2597294505 2597294553 e86d0207dbe5eccff2d63496d4354a1f
+[013:694][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 35558 2597294606 2597294657 4a516c43f77450793a13cfc0e9d48ab1
+[013:792][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 33568 2597294708 2597294755 f78f4a89da90a790864c864f56d737f6
+[013:898][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 33953 2597294809 2597294861 b12a552a8c12290fc37cea8df19fdb2c
+[013:999][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 33656 2597294911 2597294962 8abd8ebbd95977c85a8d1769f660f093
+[014:094][334389] (goog_cc_network_control.cc:714): bwe 2597295057 pushback_target_bps=3164290 estimate_bps=3164290
+[014:102][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 31284 2597295013 2597295065 0011bba73f03a5526dc890f817864132
+[014:102][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3022906 stable bitrate = 3008646 link allocation bitrate = 3022906 packet loss 0 rtt 4
+[014:102][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3022906] ], to VideoBitrateAllocation [ [2011757] ]
+[014:199][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 30677 2597295115 2597295162 514ef44b4fb15e92cb27502a757d0233
+[014:301][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 30836 2597295216 2597295264 387daa346691ef6bc262c3833b7d1357
+[014:347][334389] (goog_cc_network_control.cc:714): bwe 2597295310 pushback_target_bps=3168885 estimate_bps=3168885
+[014:347][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3027397 stable bitrate = 3008542 link allocation bitrate = 3027397 packet loss 0 rtt 4
+[014:347][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3027397] ], to VideoBitrateAllocation [ [1993234] ]
+[014:404][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 31361 2597295318 2597295367 370d0fd1153ca7b6b15be366ae4e96be
+[014:449][334389] (goog_cc_network_control.cc:714): bwe 2597295412 pushback_target_bps=3173199 estimate_bps=3173199
+[014:449][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3031311 stable bitrate = 3008142 link allocation bitrate = 3031311 packet loss 0 rtt 4
+[014:449][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3031311] ], to VideoBitrateAllocation [ [2020248] ]
+[014:504][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 29745 2597295419 2597295467 f66218abb473206978e838b806dcbd97
+[014:549][334389] (goog_cc_network_control.cc:714): bwe 2597295512 pushback_target_bps=3177458 estimate_bps=3177458
+[014:549][334418] (video_stream_encoder.cc:2348): OnBitrateUpdated, bitrate 3035610 stable bitrate = 3008182 link allocation bitrate = 3035610 packet loss 0 rtt 4
+[014:559][334418] (video_stream_encoder.cc:1661): Adjusting allocation, fps = 8, from VideoBitrateAllocation [ [3035610] ], to VideoBitrateAllocation [ [2045289] ]
+[014:605][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 31331 2597295521 2597295568 ffda476f17d3c8f2f52e7b7f4d4b81ea
+[014:707][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 32277 2597295622 2597295670 0268e2a5fa77299aa5b7b8910ff48e1a
+[014:808][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 31482 2597295724 2597295771 cb23cbaef9c2b3db90b52794f0c72ad9
+[014:909][334418] (video_stream_encoder.cc:2175): LOG_SEND|size|captured_time|encoded_time|md5 32107 2597295826 2597295872 5a810d911b27b254fafc0043eca62816

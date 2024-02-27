@@ -1,12 +1,11 @@
 
-bin_path = "/home/jiee/sparkrtc/out/t/"
-video_file = "/home/jiee/ParkScene_1920x1080_24.yuv"
+bin_path = "/home/xiangjie/sparkrtc/out/t"
+video_file = "/home/xiangjie/new.yuv"
 w,h = 1920, 1080
-fps = 24
-recon_file = "recon.yuv"
-duration =  25 # seconds
+fps = 10
+# recon_file = "res/recon.yuv"
+duration =  15 # seconds
 
-# bw = 2 # Mbps
 
 import subprocess
 import os
@@ -21,7 +20,7 @@ def start_process(cmd, error_log_file=None, std_log_file=None):
 
 def kill_process(process):
     import signal
-    process.terminate()
+    process.terminate() 
     process.wait()
     os.killpg(process.pid,signal.SIGTERM)
 
@@ -31,13 +30,25 @@ if __name__ == "__main__":
     # --bw 2 --queue 100
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--bw', type=str, default=2)
-    parser.add_argument('--queue', type=int, default=100)
+    parser.add_argument('--bw', type=str, default=6)
+    parser.add_argument('--queue', type=int, default=80)
+    parser.add_argument('--logsend', type=str, default='oksen')
+    parser.add_argument('--logrecv', type=str, default='okre')
+    parser.add_argument('--figname', type=str, default='figname')
+    parser.add_argument('--recon', type=str, default='res/recon.yuv')
     args = parser.parse_args()
     bw = args.bw
     queue_size = args.queue
+    logsend = args.logsend
+    logrecv = args.logrecv
+    figname = args.figname
+    recon_file = args.recon
+    # trace_up = f'traces/{bw}mbps.t'
+    # trace_down = f'traces/{bw}mbps.t'
+    tracefile = 'trace_1000427_http---www.msn.com-'
     trace_up = f'traces/{bw}mbps.t'
-    trace_down = f'traces/{bw}mbps.t'
+    trace_down = f'traces/{tracefile}'
+
     
     # end process that occupies the port 8888
     
@@ -48,15 +59,18 @@ if __name__ == "__main__":
     server_process = start_process(server_cmd)
 
     # Start the clients
-    cmd_sender = f"{bin_path}/peerconnection_localvideo --file {video_file} --width {w} --height {h} --fps {fps} --logname send_{queue_size}_{bw} "
+    cmd_sender = f"{bin_path}/peerconnection_localvideo --file {video_file} --width {w} --height {h} --fps {fps} --logname {logsend} "
     
-    cmd_receiver = f"mm-link {trace_up} {trace_down} --meter-downlink --meter-downlink-delay --downlink-queue=droptail --downlink-queue-args=packets={queue_size}"
-    # cmd_receiver = "mm-loss downlink 0.2"
+    cmd_receiver = f"mm-link {trace_up} {trace_down} --downlink-log=logs/mah.log --downlink-queue=droptail --downlink-queue-args=packets={queue_size}"
+    # cmd_receiver = "mm-lo dss downlink 0.1"
     # cmd_receiver = "mm-delay 1000"
     rec_process = start_process(cmd_receiver, 'logs/receiver.log')
     
+    # input_line = f"ifconfig > ifconfig.txt\n" 
+    # rec_process.stdin.write(input_line.encode())
+    # rec_process.stdin.flush()
     
-    input_line = f"{bin_path}/peerconnection_localvideo --recon {recon_file} --server 100.64.0.5 --logname recv_{queue_size}_{bw}\n" # 100.64.0.5 is mahimahi IP
+    input_line = f"{bin_path}/peerconnection_localvideo --recon {recon_file} --server 100.64.0.1 --logname {logrecv}\n" # 
     rec_process.stdin.write(input_line.encode())
     rec_process.stdin.flush()
     
@@ -75,8 +89,5 @@ if __name__ == "__main__":
     kill_process(rec_process)
     kill_process(server_process)
 
-    print("Done!")
+    print("Test Done!")
     
-    # analyze the logs
-    cmd = f"python log_reader.py res/{queue_size}_{bw}.txt"
-    os.system(cmd)
