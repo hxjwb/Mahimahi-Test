@@ -1,10 +1,10 @@
 
 bin_path = "/home/xiangjie/sparkrtc/out/t"
-video_file = "/home/xiangjie/new.yuv"
+video_file = "/home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_10_qrcode.yuv"
 w,h = 1920, 1080
 fps = 10
 # recon_file = "res/recon.yuv"
-duration =  15 # seconds
+duration =  60 # seconds
 
 
 import subprocess

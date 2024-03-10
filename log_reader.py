@@ -1,3 +1,12 @@
+import time
+import os
+archive_time = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+def archive(file):
+    filename = file.split('/')[-1]
+    if not os.path.exists(f'archive/{archive_time}'):
+        os.mkdir(f'archive/{archive_time}')
+    os.system(f'cp {file} archive/{archive_time}/{filename}')
+    print(f'Archived {file} to archive/{archive_time}/{filename}')
 
 class Frame:
     def __init__(self, frame_size, captured_time,encoded_time,md5):
@@ -12,6 +21,9 @@ class Frame:
         self.fps = None
         self.pid = None
         self.bitrate = None # encoding bitrate
+        self.action = 1
+        self.state = -1
+        self.bwsate = -1
         # self.intra = bool(int(intra))
     def net_delay(self):
         if self.recvms:
@@ -87,6 +99,8 @@ if __name__ == "__main__":
     # print(sender_log)
     # print(receiver_log)
     
+    archive(sender_log)
+    archive(receiver_log)
     
 
     lines_sender = []
@@ -141,6 +155,81 @@ if __name__ == "__main__":
                     frame.bitrate = int(bitrate)
                     # print(bitrate)
                     break
+                
+            index = i
+            while True:
+                index -= 1
+                # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+                if 'CODINGBitrate: ' in lines_sender[index]:
+                    valued_lines_index.append(index)
+                    # print(lines_sender[index])
+                    av1_bitrate = lines_sender[index].split("CODINGBitrate: ")[1]
+                    frame.bitrate = int(av1_bitrate) * 1000
+                    
+                    # print(bitrate)
+                    break
+        
+            index = i
+            while True:
+                index -= 1
+                # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+                if 'LibaomAv1Encoder::SetRates' in lines_sender[index]:
+                    valued_lines_index.append(index)
+                    # print(lines_sender[index])
+                    av1_bitrate = lines_sender[index].split("SetRates ")[1].split(" ")[0]
+                    # frame.bitrate = int(av1_bitrate) * 1000
+                    
+                    # print(bitrate)
+                    break
+            
+            # (aimd_rate_control.cc:240): State 
+            index = i
+            while True:
+                index -= 1
+                # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+                if '(aimd_rate_control.cc:240): State' in lines_sender[index]:
+                    valued_lines_index.append(index)
+                    # print(lines_sender[index])
+                    
+                    state = lines_sender[index].split(" ")[-1].strip()
+                    state = int(state)
+                    frame.state = state
+                    # frame.bitrate = int(av1_bitrate) * 1000
+                    
+                    # print(bitrate)
+                    break
+            
+            index = i
+            while True:
+                index -= 1
+                # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+                if 'BW State' in lines_sender[index]:
+                    valued_lines_index.append(index)
+                    # print(lines_sender[index])
+                    
+                    state = lines_sender[index].split(" ")[-1].strip()
+                    state = int(state)
+                    frame.bwstate = state
+                    # frame.bitrate = int(av1_bitrate) * 1000
+                    
+                    # print(bitrate)
+                    break
+                
+            index = i
+            try:
+                while True:
+                    index -= 1
+                    # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+                    if 'LOGACTION' in lines_sender[index]:
+                        valued_lines_index.append(index)
+                        # print(lines_sender[index])
+                        action_code = lines_sender[index].split("LOGACTION ")[1]
+                        action_code = int(action_code)
+                        frame.action = action_code
+                        # print(bitrate)
+                        break
+            except:
+                pass
 
             
             # Get the packet id(RTP timestamp)
@@ -181,6 +270,9 @@ if __name__ == "__main__":
             lines_valued.append(line)
     with open(f'{figname}_clean.log', 'w') as f:
         f.writelines(lines_valued)
+        
+    archive(f'{figname}_clean.log')
+    
     recv_dict = {}
     duplicate_symbol = []
     for line in lines_receiver:
@@ -225,7 +317,7 @@ if __name__ == "__main__":
     resf.write("Average delay: " + str(sum(total_delay) / len(total_delay)))
     resf.write("Average size: " + str(sum(total_size) / len(total_size)))
     resf.close()
-    
+    archive(res_log_name)
         
    
     sizes = [frame.frame_size for frame in sended_frames]
@@ -234,11 +326,13 @@ if __name__ == "__main__":
         if not delays[i]:
             delays[i] = 1999
     
-    bytes_per_frame = [frame.bps / 8 / frame.fps for frame in sended_frames]
-    enc_bytes_per_frame = [frame.bitrate / 8 / frame.fps for frame in sended_frames]
+    bytes_per_frame = [frame.bps / 8 / 9 for frame in sended_frames]
+    enc_bytes_per_frame = [frame.bitrate / 8 / 9 for frame in sended_frames]
     nacks = [frame.nack for frame in sended_frames]
-    
-    
+    actions = [frame.action for frame in sended_frames]
+    states = [frame.state * 80000 for frame in sended_frames]
+    bwstates = [frame.bwstate * 70000 for frame in sended_frames]
+    print(states)
     import matplotlib as mpl
     mpl.use('Agg')
     import matplotlib.pyplot as plt
@@ -250,10 +344,23 @@ if __name__ == "__main__":
     plt.figure(figsize=(10,6))
 
     plt.xlim([st,ed])
+    plt.xticks(range(st, ed, 5))
     
     bar_x = [i for i in range(len(sended_frames))]
     
-    plt.bar(bar_x, sizes, label='frame size', color='Coral', alpha=0.9) 
+    # plt.bar(bar_x, sizes, label='frame size', color='Coral', alpha=0.9) 
+    # show different color for different actions
+    decrease = [i for i in range(len(actions)) if actions[i] == 0]
+    sizes_decrease = [sizes[i] for i in range(len(actions)) if actions[i] == 0]
+    release = [i for i in range(len(actions)) if actions[i] == 1]
+    sizes_release = [sizes[i] for i in range(len(actions)) if actions[i] == 1]
+    hold = [i for i in range(len(actions)) if actions[i] == 2]
+    sizes_hold = [sizes[i] for i in range(len(actions)) if actions[i] == 2]
+    if len(decrease) > 0:
+        plt.bar(decrease, sizes_decrease, label='Action', color='Coral', alpha=0.9)
+    plt.bar(release, sizes_release, label='Normal size', color='SkyBlue', alpha=0.9)
+    if len(hold) > 0:
+        plt.bar(hold, sizes_hold, label='Hold', color='LightGreen', alpha=0.9)
     
     # show the frame size of each frame
     if show_num:
@@ -266,7 +373,9 @@ if __name__ == "__main__":
     plt.ylabel('Size(Bytes)')
     
     plt.plot(bar_x, bytes_per_frame, label='BWE(bytes per frame)', c='blue', ms=5, linewidth='1.5')
-    plt.plot(bar_x, enc_bytes_per_frame, label='BWE(bytes per frame)', c='green', ms=5, linewidth='1.5')
+    plt.plot(bar_x, enc_bytes_per_frame, label='Encoding bitrate(bytes per frame)', c='green', ms=5, linewidth='1.5')
+    plt.plot(bar_x, states, label='State', c='red', ms=5, linewidth='1.5')
+    plt.plot(bar_x, bwstates, label='BW State', c='orange', ms=5, linewidth='1.5')
 
     # Average frame size
     # avg_size = sum(sizes) / len(sizes)
@@ -275,6 +384,7 @@ if __name__ == "__main__":
     
     
     packet_per_ms = read_loss_from_mahimahi_log('logs/mah.log')
+    archive('logs/mah.log')
     losses = []
     for i in range(len(bar_x) - 1):
         frame = sended_frames[i]
@@ -304,4 +414,4 @@ if __name__ == "__main__":
     
     name = f'{figname}.png'
     plt.savefig(name)
-
+    archive(name)

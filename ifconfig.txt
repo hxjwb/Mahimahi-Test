@@ -1,0 +1,16 @@
+ingress: flags=81<UP,POINTOPOINT,RUNNING>  mtu 1500
+        inet 100.64.0.8  netmask 255.255.255.255  destination 100.64.0.7
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 500  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 2  bytes 58 (58.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2  bytes 58 (58.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+

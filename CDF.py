@@ -30,8 +30,11 @@ def get_delays(file):
 
     return delays
 
-delays = get_delays('result.log')
-delays2 = get_delays('result_pacer10.log')
+# delays = get_delays('res/pace.log') # Pace
+
+
+delays = get_delays('res/ours.log') # No pace and no action
+delays2 = get_delays('res/pace.log') # No pace and action
 
 # draw the graph
 import matplotlib as mpl
@@ -52,8 +55,8 @@ y2 = []
 for i in range(len(delays2)):
     y2.append((i + 1) / len(delays2))
 
-plt.plot(delays, y, label='Paced',color='Coral')
-plt.plot(delays2, y2, label='Unpaced',color='SkyBlue')
+plt.plot(delays, y, label='Ours',color='Coral')
+plt.plot(delays2, y2, label='Pace',color='Black')
 
 plt.xlabel('Delay (ms)')
 plt.ylabel('CDF')

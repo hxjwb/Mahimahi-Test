@@ -1,1 +1,4 @@
 *.yuv
+archive/* 
+video/*
+
