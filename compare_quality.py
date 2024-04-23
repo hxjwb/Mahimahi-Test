@@ -56,9 +56,9 @@ def get_CDF(name,l1,lable1,l2,lable2):
 
 import os
 
-# cmd1 = "python3 QRdec.py /home/xiangjie/Mahimahi-Test/res/ours.yuv -o ours.json -r /home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_10_qrcode.yuv -v /home/xiangjie/Mahimahi-Test/res/ours_vmaf.yuv"
+# cmd1 = "python3 QRdec.py /home/xiangjie/Mahimahi-Test/res/ours.yuv -o ours.json -r /home/xiangjie/Mahimahi-Test/video/gta6_30_coded.yuv -v /home/xiangjie/Mahimahi-Test/res/ours_vmaf.yuv"
 
-# cmd2 = "python3 QRdec.py /home/xiangjie/Mahimahi-Test/res/pace.yuv -o pace.json -r /home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_10_qrcode.yuv -v /home/xiangjie/Mahimahi-Test/res/pace_vmaf.yuv"
+# cmd2 = "python3 QRdec.py /home/xiangjie/Mahimahi-Test/res/pace.yuv -o pace.json -r /home/xiangjie/Mahimahi-Test/video/gta6_30_coded.yuv -v /home/xiangjie/Mahimahi-Test/res/pace_vmaf.yuv"
 
 # os.system(cmd1)
 
@@ -66,14 +66,14 @@ import os
 
 import json
 
-with open('ours.json', 'r') as f:
+with open('res/ours.json', 'r') as f:
     ours = json.load(f)
 
-with open('pace.json', 'r') as f:
+with open('res/pace.json', 'r') as f:
     pace = json.load(f)
 
-ours_psnr = ours['psnr'][0:150]
-pace_psnr = pace['psnr'][0:150]
+ours_psnr = ours['psnr'][4:]
+pace_psnr = pace['psnr'][4:]
 
 ours_ssim = ours['ssim']
 pace_ssim = pace['ssim']
@@ -83,17 +83,17 @@ get_CDF('psnr', ours_psnr, 'ours', pace_psnr, 'pace')
 # get_CDF('ssim', ours_ssim, 'ours', pace_ssim, 'pace')
 
 # calculate vmaf by ffmpeg
-file1 = "/home/xiangjie/Mahimahi-Test/res/ours.yuv"
-file2 = "/home/xiangjie/Mahimahi-Test/res/ours_vmaf.yuv"
-cmd = f"ffmpeg -hide_banner -video_size 416x240 -pixel_format yuv420p -i {file1} -video_size 416x240 -pixel_format yuv420p -i {file2} -lavfi ssim -f null -"
+# file1 = "/home/xiangjie/Mahimahi-Test/res/ours.yuv"
+# file2 = "/home/xiangjie/Mahimahi-Test/res/ours_vmaf.yuv"
+# cmd = f"ffmpeg -hide_banner -video_size 416x240 -pixel_format yuv420p -i {file1} -video_size 416x240 -pixel_format yuv420p -i {file2} -lavfi ssim -f null -"
 
-os.system(cmd)
+# os.system(cmd)
 
-file1 = "/home/xiangjie/Mahimahi-Test/res/pace.yuv"
-file2 = "/home/xiangjie/Mahimahi-Test/res/pace_vmaf.yuv"
-cmd = f"ffmpeg -hide_banner -video_size 416x240 -pixel_format yuv420p -i {file1} -video_size 416x240 -pixel_format yuv420p -i {file2} -lavfi ssim -f null -"
+# file1 = "/home/xiangjie/Mahimahi-Test/res/pace.yuv"
+# file2 = "/home/xiangjie/Mahimahi-Test/res/pace_vmaf.yuv"
+# cmd = f"ffmpeg -hide_banner -video_size 416x240 -pixel_format yuv420p -i {file1} -video_size 416x240 -pixel_format yuv420p -i {file2} -lavfi ssim -f null -"
 
-os.system(cmd)
+# os.system(cmd)
 
 
 

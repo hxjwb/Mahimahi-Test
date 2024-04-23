@@ -2,3 +2,11 @@
 archive/* 
 video/*
 
+ugc-dataset/*
+*.bin
+*.yuv
+log_*
+*_0
+*_1
+*.png
+*.pdf

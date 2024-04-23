@@ -1,13 +1,13 @@
 
 
 
-input_yuv = "/home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_60.yuv"
+input_yuv = "/home/xiangjie/Mahimahi-Test/video/gta6.yuv"
 
 input_fps = 60
 
-output_yuv = "/home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_10.yuv"
+output_yuv = "/home/xiangjie/Mahimahi-Test/video/gta6_30.yuv"
 
-output_fps = 10
+output_fps = 30
 
 file = open(input_yuv, "rb")
 

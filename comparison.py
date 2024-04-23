@@ -7,7 +7,7 @@ st,ed = 0, 100
 show_numbers = False
 
 def change_action(action):
-    cc_path = "/home/xiangjie/sparkrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc"
+    cc_path = "/home/xiangjie/sparkrtc/modules/pacing/pacing_controller.cc"
     file = open(cc_path, "r")
     lines = file.readlines()
     file.close()
@@ -74,7 +74,12 @@ def run(name):
     shownumber_str = ""
     if show_numbers:
         shownumber_str = "-n"
-    cmd = f"python3 log_reader.py {shownumber_str} -s logs/{logsend}_0 -r logs/{logrecv}_0 --figname res/{figname} --range {st}:{ed} -o res/{name}.log"
+
+    # -d
+    only_draw_str = ""
+    if only_draw:
+        only_draw_str = "-d"
+    cmd = f"python3 log_reader.py {shownumber_str} -s logs/{logsend}_0 -r logs/{logrecv}_0 --figname res/{figname} --range {st}:{ed} -o res/{name}.log --recon res/{name}.yuv --seq {only_draw_str}"
     os.system(cmd)
 
 
@@ -82,7 +87,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', action='store_true', help='Only drawing, no test.')
-    parser.add_argument('-q', type=int, default=130, help='Queue size.')
+    parser.add_argument('-q', type=int, default=500, help='Queue size.')
     parser.add_argument('-c', action='store_true', help='Compare.',default=False)
     parser.add_argument('-r',type=str, help='Range.',default="0:500")
     parser.add_argument('-n', action='store_true', help='Show size numbers',default=False)
@@ -100,6 +105,9 @@ if __name__ == "__main__":
         change_action(False)
         run("pace")
     
-    change_pace(False)
-    change_action(True)
-    run("ours")
+    change_pace(False) # 100.0
+    change_action(False) # token bucket
+    
+    
+    run("CBR0")
+    

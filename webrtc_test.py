@@ -1,10 +1,10 @@
 
 bin_path = "/home/xiangjie/sparkrtc/out/t"
-video_file = "/home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_10_qrcode.yuv"
+# video_file = "/home/xiangjie/Mahimahi-Test/video/gta6_30_coded.yuv"
 w,h = 1920, 1080
-fps = 10
+fps = 30
 # recon_file = "res/recon.yuv"
-duration =  60 # seconds
+duration =  63 # seconds
 
 
 import subprocess
@@ -36,6 +36,9 @@ if __name__ == "__main__":
     parser.add_argument('--logrecv', type=str, default='okre')
     parser.add_argument('--figname', type=str, default='figname')
     parser.add_argument('--recon', type=str, default='res/recon.yuv')
+    parser.add_argument('--video', type=str, default='ugc-dataset/yuv/game_coded.yuv')
+    
+    video_file = parser.parse_args().video
     args = parser.parse_args()
     bw = args.bw
     queue_size = args.queue
@@ -57,20 +60,23 @@ if __name__ == "__main__":
     # Start the server
     server_cmd = os.path.join(bin_path, 'peerconnection_server')
     server_process = start_process(server_cmd)
-
-    # Start the clients
-    cmd_sender = f"{bin_path}/peerconnection_localvideo --file {video_file} --width {w} --height {h} --fps {fps} --logname {logsend} "
     
+    time.sleep(1)
+    
+    # Start the clients
+    cmd_sender = f"{bin_path}/peerconnection_localvideo --file {video_file} --width {w} --height {h} --fps {fps} --logname {logsend} 2>send_stderr.log "
+    
+
     cmd_receiver = f"mm-link {trace_up} {trace_down} --downlink-log=logs/mah.log --downlink-queue=droptail --downlink-queue-args=packets={queue_size}"
     # cmd_receiver = "mm-lo dss downlink 0.1"
     # cmd_receiver = "mm-delay 1000"
     rec_process = start_process(cmd_receiver, 'logs/receiver.log')
     
-    # input_line = f"ifconfig > ifconfig.txt\n" 
-    # rec_process.stdin.write(input_line.encode())
-    # rec_process.stdin.flush()
+    input_line = f"ifconfig > ifconfig.txt\n" 
+    rec_process.stdin.write(input_line.encode())
+    rec_process.stdin.flush()
     
-    input_line = f"{bin_path}/peerconnection_localvideo --recon {recon_file} --server 100.64.0.1 --logname {logrecv}\n" # 
+    input_line = f"{bin_path}/peerconnection_localvideo --recon {recon_file} --server 100.64.0.1 --logname {logrecv} 2> rev_std.txt\n" # 
     rec_process.stdin.write(input_line.encode())
     rec_process.stdin.flush()
     

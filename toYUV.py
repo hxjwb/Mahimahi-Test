@@ -2,9 +2,9 @@
 
 
 
-video_file = "/home/xiangjie/Mahimahi-Test/video/gta6trailer_1080.m4s"
+video_file = "/home/xiangjie/Mahimahi-Test/video/tl_1000.mp4"
 
-output_file = "/home/xiangjie/Mahimahi-Test/video/gta6trailer_1080_60.yuv"
+output_file = "/home/xiangjie/Mahimahi-Test/video/gta6.yuv"
 
 # to yuv420
 

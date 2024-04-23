@@ -24,6 +24,9 @@ class Frame:
         self.action = 1
         self.state = -1
         self.bwsate = -1
+        self.seq = -1
+        self.psnr = None
+        self.ssim = None
         # self.intra = bool(int(intra))
     def net_delay(self):
         if self.recvms:
@@ -86,8 +89,15 @@ if __name__ == "__main__":
     parser.add_argument("--figname", type=str, default='figname')
     parser.add_argument("-n", action='store_true')
     parser.add_argument("--range", type=str, default='0:200')
+    parser.add_argument("--recon", type=str, default="rec")
+    parser.add_argument("--seq", action='store_true',default=False)
+    parser.add_argument('-d', action='store_true', help='Only drawing, no test.')
     
     
+    recon_file = parser.parse_args().recon
+    show_frame_seq = parser.parse_args().seq
+    
+    only_draw = parser.parse_args().d
     res_log_name = parser.parse_args().o
     sender_log = parser.parse_args().s
     receiver_log = parser.parse_args().r
@@ -101,6 +111,7 @@ if __name__ == "__main__":
     
     archive(sender_log)
     archive(receiver_log)
+    
     
 
     lines_sender = []
@@ -156,31 +167,31 @@ if __name__ == "__main__":
                     # print(bitrate)
                     break
                 
-            index = i
-            while True:
-                index -= 1
-                # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
-                if 'CODINGBitrate: ' in lines_sender[index]:
-                    valued_lines_index.append(index)
-                    # print(lines_sender[index])
-                    av1_bitrate = lines_sender[index].split("CODINGBitrate: ")[1]
-                    frame.bitrate = int(av1_bitrate) * 1000
+            # index = i
+            # while True:
+            #     index -= 1
+            #     # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+            #     if 'CODINGBitrate: ' in lines_sender[index]:
+            #         valued_lines_index.append(index)
+            #         # print(lines_sender[index])
+            #         av1_bitrate = lines_sender[index].split("CODINGBitrate: ")[1]
+            #         frame.bitrate = int(av1_bitrate) * 1000
                     
-                    # print(bitrate)
-                    break
+            #         # print(bitrate)
+            #         break
         
-            index = i
-            while True:
-                index -= 1
-                # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
-                if 'LibaomAv1Encoder::SetRates' in lines_sender[index]:
-                    valued_lines_index.append(index)
-                    # print(lines_sender[index])
-                    av1_bitrate = lines_sender[index].split("SetRates ")[1].split(" ")[0]
-                    # frame.bitrate = int(av1_bitrate) * 1000
+            # index = i
+            # while True:
+            #     index -= 1
+            #     # [010:316][356598] (libaom_av1_encoder.cc:802): LibaomAv1Encoder::SetRates 4651 kbps
+            #     if 'LibaomAv1Encoder::SetRates' in lines_sender[index]:
+            #         valued_lines_index.append(index)
+            #         # print(lines_sender[index])
+            #         av1_bitrate = lines_sender[index].split("SetRates ")[1].split(" ")[0]
+            #         # frame.bitrate = int(av1_bitrate) * 1000
                     
-                    # print(bitrate)
-                    break
+            #         # print(bitrate)
+            #         break
             
             # (aimd_rate_control.cc:240): State 
             index = i
@@ -250,6 +261,7 @@ if __name__ == "__main__":
             except:
                 continue
             
+            index = i
             # get the nacks between this frame and the last frame
             nacks = 0
             for i in range(last_line, index):
@@ -259,19 +271,20 @@ if __name__ == "__main__":
                     nack = stt.split("LOGNACK for")[1].split(' ')[1]
                     nack = int(nack)
                     nacks += nack
+                    # print(nack)
                     
             frame.nack = nacks * 1300
             sended_frames.append(frame)
             last_line = index
 
-    lines_valued = []
-    for i,line in enumerate(lines_sender):
-        if i in valued_lines_index:
-            lines_valued.append(line)
-    with open(f'{figname}_clean.log', 'w') as f:
-        f.writelines(lines_valued)
+    # lines_valued = []
+    # for i,line in enumerate(lines_sender):
+    #     if i in valued_lines_index:
+    #         lines_valued.append(line)
+    # with open(f'{figname}_clean.log', 'w') as f:
+    #     f.writelines(lines_valued)
         
-    archive(f'{figname}_clean.log')
+    # archive(f'{figname}_clean.log')
     
     recv_dict = {}
     duplicate_symbol = []
@@ -307,32 +320,66 @@ if __name__ == "__main__":
                 # print("Frame not received: " + str(frame))
                 resf.write("Frame not received: " + str(frame) + "\n")
                 
-        if frame.net_delay() != None:
-            total_delay.append(frame.net_delay())
-            total_size.append(frame.frame_size)
-            # print(frame)
-            resf.write(str(frame) + "\n")
+        # total_delay.append(frame.net_delay())
+        # total_size.append(frame.frame_size)
+        # print(frame)
+        resf.write(str(frame) + "\n")
             
     # print("Average delay: " + str(sum(total_delay) / len(total_delay)))
-    resf.write("Average delay: " + str(sum(total_delay) / len(total_delay)))
-    resf.write("Average size: " + str(sum(total_size) / len(total_size)))
+    # resf.write("Average delay: " + str(sum(total_delay) / len(total_delay)))
+    # resf.write("Average size: " + str(sum(total_size) / len(total_size)))
     resf.close()
     archive(res_log_name)
         
    
     sizes = [frame.frame_size for frame in sended_frames]
     delays = [frame.net_delay() for frame in sended_frames]
+    # print(delays)
     for i in range(len(delays)):
         if not delays[i]:
             delays[i] = 1999
     
-    bytes_per_frame = [frame.bps / 8 / 9 for frame in sended_frames]
-    enc_bytes_per_frame = [frame.bitrate / 8 / 9 for frame in sended_frames]
+    fps_average = sum([frame.fps for frame in sended_frames]) / len(sended_frames)
+    
+    print("Average fps: ", fps_average)
+    
+    bytes_per_frame = [frame.bps / 8 / fps_average for frame in sended_frames]
+    enc_bytes_per_frame = [frame.bitrate / 8 / fps_average for frame in sended_frames]
+    
     nacks = [frame.nack for frame in sended_frames]
+    # print(nacks)
     actions = [frame.action for frame in sended_frames]
+    
+    # gcc states
     states = [frame.state * 80000 for frame in sended_frames]
     bwstates = [frame.bwstate * 70000 for frame in sended_frames]
-    print(states)
+    
+    # Quality and content analysis
+    ref_yuv = "ugc-dataset/yuv/game_coded.yuv"
+    if not os.path.exists(f'{figname}.json'):
+        cmd = f"python3 QRdec.py {recon_file} -r {ref_yuv} -o {figname}.json "
+        os.system(cmd)
+    
+    import json
+    # load the json file
+    with open(f'{figname}.json', 'r') as f:
+        data = json.load(f)
+    
+    psnr = data['psnr']
+    ssim = data['ssim']
+    frame_seq = data['seq']
+    
+    frame_index = 0
+    received_count = 0  
+    for frame in sended_frames:
+        if frame.net_delay() != None and frame_index < len(frame_seq):
+            frame.seq = frame_seq[frame_index]
+            frame.psnr = psnr[frame_index]
+            # frame.ssim = ssim[frame_index]
+            frame_index += 1
+    sequences = [frame.seq for frame in sended_frames]
+    psnrs = [str(frame.psnr)[:3] for frame in sended_frames]
+    # print(states)
     import matplotlib as mpl
     mpl.use('Agg')
     import matplotlib.pyplot as plt
@@ -347,6 +394,8 @@ if __name__ == "__main__":
     plt.xticks(range(st, ed, 5))
     
     bar_x = [i for i in range(len(sended_frames))]
+    
+    # print(bar_x)
     
     # plt.bar(bar_x, sizes, label='frame size', color='Coral', alpha=0.9) 
     # show different color for different actions
@@ -367,6 +416,13 @@ if __name__ == "__main__":
         for i in range(st, ed):
             plt.text(bar_x[i], sizes[i], sizes[i], ha='center', va='bottom', fontsize=7)
 
+    if show_frame_seq:
+        for i in range(st, ed):
+            # print(bar_x)
+            plt.text(bar_x[i], 2000, sequences[i], ha='center', va='bottom', fontsize=7)
+            
+        for i in range(st, ed):
+            plt.text(bar_x[i], 4000, psnrs[i], ha='center', va='bottom', fontsize=7)
 
     # x: frame number y: frame size
     plt.xlabel('Frame Number')
@@ -374,16 +430,19 @@ if __name__ == "__main__":
     
     plt.plot(bar_x, bytes_per_frame, label='BWE(bytes per frame)', c='blue', ms=5, linewidth='1.5')
     plt.plot(bar_x, enc_bytes_per_frame, label='Encoding bitrate(bytes per frame)', c='green', ms=5, linewidth='1.5')
-    plt.plot(bar_x, states, label='State', c='red', ms=5, linewidth='1.5')
-    plt.plot(bar_x, bwstates, label='BW State', c='orange', ms=5, linewidth='1.5')
+    # plt.plot(bar_x, states, label='State', c='red', ms=5, linewidth='1.5')
+    # plt.plot(bar_x, bwstates, label='BW State', c='orange', ms=5, linewidth='1.5')
 
     # Average frame size
-    # avg_size = sum(sizes) / len(sizes)
+    avg_size = sum(sizes) / len(sizes)
+    
+    print("Average frame size: ", avg_size)
     # plt.axhline(y=avg_size, color='r', linestyle='--', alpha=0.5)
     
     
     
     packet_per_ms = read_loss_from_mahimahi_log('logs/mah.log')
+    print("ok")
     archive('logs/mah.log')
     losses = []
     for i in range(len(bar_x) - 1):
@@ -395,9 +454,11 @@ if __name__ == "__main__":
             loss = 0
         losses.append(loss * 1300)
     losses.append(0)
-    plt.ylim([0, 200000])
-    plt.yticks(range(0, 200000, 20000))
+    plt.ylim([0, 100000])
+    plt.yticks(range(0, 100000, 20000))
     plt.bar(bar_x, losses, label='losses', color='black', alpha=0.5)
+    # print(nacks)
+    plt.bar(bar_x, nacks, label='nacks', color='yellow', alpha=0.5)
     # plt.plot(bar_x, nacks, label='Nack', c='yellow', ms=5, linewidth='1.5')
     plt.legend(loc = 'upper left')
     
@@ -415,3 +476,6 @@ if __name__ == "__main__":
     name = f'{figname}.png'
     plt.savefig(name)
     archive(name)
+    
+    # cmd = "python3 CDF.py"
+    # os.system(cmd)
