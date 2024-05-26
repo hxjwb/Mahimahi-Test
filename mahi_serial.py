@@ -134,12 +134,12 @@ if __name__ == '__main__':
                         name='Queueing Packets'))
 
     # bar x2 y2 
-    fig.add_trace(go.Bar(x=x2, y=y2, name='Frame Packets', width=1000))
+    fig.add_trace(go.Bar(x=x2, y=y2, name='Frame Packets', width=5))
 
 
 
     # bar x3 y3 
-    fig.add_trace(go.Bar(x=x3, y=y3, name='Dropped Packets', width=1000))
+    fig.add_trace(go.Bar(x=x3, y=y3, name='Dropped Packets', width=5))
     
 
     # y range 0-1000
