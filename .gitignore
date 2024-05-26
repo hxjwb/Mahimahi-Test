@@ -13,3 +13,6 @@ log_*
 chrome-linux64/*
 compete_stream/*
 ffmpeg/*
+*.zip
+*.tar.xz
+*.mp4

@@ -133,8 +133,9 @@ if __name__ == '__main__':
                         mode='lines',
                         name='Queueing Packets'))
 
-    # bar x2 y2
-    fig.add_trace(go.Bar(x=x2, y=y2, name='Frame Packets'))
+    # bar x2 y2 调整柱子宽度为较宽
+    fig.add_trace(go.Bar(x=x2, y=y2, name='Frame Packets', width=1000))
+
 
 
     # scatter x3 y3
@@ -147,6 +148,7 @@ if __name__ == '__main__':
                             symbol='x'
                         )))
     
+
     # y range 0-1000
     # fig.update_yaxes(range=[0, 1000])
     # rangeslider visible
@@ -162,7 +164,6 @@ if __name__ == '__main__':
     
     os.system("git commit -am 'update'")
     os.system("git push")
-    
     
 
     
