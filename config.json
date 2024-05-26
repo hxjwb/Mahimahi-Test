@@ -1,1 +1,1 @@
-{"video_file": "/home/xiangjie/ugc-dataset/test_yuv/game_coded2.yuv", "queue_size": 500, "test_name": "CBR_real", "trace": "trace_1000427_http---www.msn.com-"}
+{"video_file": "/home/xiangjie/ugc-dataset/test_yuv/game_coded2.yuv", "queue_size": 250, "test_name": "networking", "trace": "12mbps.t"}

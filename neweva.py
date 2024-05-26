@@ -43,7 +43,7 @@ if __name__ == "__main__":
         
     reference_yuv = config_dict['video_file']
     
-    cmd = f"python3 QRdec.py {recon_file} -r {reference_yuv} -o {os.path.join(path, 'quality_seq.json')} "
+    cmd = f"python3 QRdec.py {recon_file}  -r {reference_yuv} -o {os.path.join(path, 'quality_seq.json')} "
     
     
     os.system(cmd)
@@ -152,8 +152,8 @@ if __name__ == "__main__":
             encoding_bitrate = None
             start_index = send_index - 1
             for i in range(start_index, 0, -1):
-                if "OnBitrateUpdated" in send_lines[i]:
-                    bitrate = send_lines[i].split("bitrate ")[1].split(" ")[0]
+                if "SetRates,kbps,fps" in send_lines[i]:
+                    bitrate = send_lines[i].split(" ")[-2]
                     encoding_bitrate  = int(bitrate)
                     break
             
@@ -171,7 +171,7 @@ if __name__ == "__main__":
 
         if not encoding_bitrate:
             print("encoding bitrate not found!")
-            exit()
+            encoding_bitrate = 0
         
         fps_list[seq] = fps
         bwe_list[seq] = bwe
@@ -202,9 +202,12 @@ if __name__ == "__main__":
     
     print("done")
     
-cmd = f"python3 serial.py {path}"
-os.system(cmd)
-    
+    cmd = f"python3 serial.py {path}"
+    os.system(cmd)
+        
+        
+    cmd = f"python3 mahi_serial.py {path}"
+    os.system(cmd)
 
             
             

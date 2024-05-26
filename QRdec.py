@@ -43,20 +43,27 @@ if __name__ == "__main__":
     parser.add_argument('-s', type=str, default='1920x1080', help='Input YUV size, default is 1920x1080')
     parser.add_argument('-r', type=str, default='yuv_coded.yuv', help='referenced yuv file')
     parser.add_argument('-o', type=str, default='metric.json', help='Output json file for metrics')
-    # parser.add_argument('-v', type=str, default='out.yuv', help='YUV for vmaf')
+    parser.add_argument('-v', type=bool, default=False, help='VMAF')
+    
+    
     args = parser.parse_args()
+    print("decoding qr codes....")
     
     
-    # ref_yuv_file = args.v
     # Specify the file path, width, and height
     file_path = args.file
     file_ref = args.r
     w, h = map(int, args.s.split('x'))
-
+    
+    if args.v:
+        ref_yuv_file = 'temp_vmaf.yuv'
+        yuvfile_vmaf_test_name = 'temp_vmaf_test.yuv'
+        yuvfile_vmaf = open(ref_yuv_file, 'wb')
+        yuvfile_vmaf_test = open(yuvfile_vmaf_test_name, 'wb')
     # read yuv file
     yuvfile = open(file_path, 'rb')
     yuvfile_ref = open(file_ref, 'rb')
-    # yuvfile_vmaf = open(ref_yuv_file, 'wb')
+    
     output_name = args.o
     
     # get frame count
@@ -66,11 +73,24 @@ if __name__ == "__main__":
     frame_count = yuv_size // (h*w*3//2)
     print('frame_count', frame_count)
     
+    
+    # get frame count of reference file
+    yuvfile_ref.seek(0, 2)
+    yuv_size_ref = yuvfile_ref.tell()
+    yuvfile_ref.seek(0, 0)
+    frame_count_ref = yuv_size_ref // (h*w*3//2)
+    print('frame_count_ref', frame_count_ref)
+    
+    
+    vmaf_data = [None for _ in range(frame_count_ref + 1)] #start from 1
         
     output = {}
     output['psnr'] = []
     output['ssim'] = []
     output['seq']  = []
+    
+    
+    
     for f in range(frame_count):
         
         # read 1 frame
@@ -89,11 +109,13 @@ if __name__ == "__main__":
             yuvfile_ref.seek(frame_number * h * w * 3//2, 0)
             
             # read 1 frame
-            yuv_buf = yuvfile_ref.read(h*w*3//2)
+            yuv_buf_ref = yuvfile_ref.read(h*w*3//2)
             
-            # yuvfile_vmaf.write(yuv_buf)
-            
-            yuv_data = np.frombuffer(yuv_buf, dtype=np.uint8).reshape((h + h // 2, w))
+            if args.v:
+                # yuvfile_vmaf.write(yuv_buf_ref)
+                # yuvfile_vmaf_test.write(yuv_buf)
+                vmaf_data[frame_number] = yuv_buf_ref
+            yuv_data = np.frombuffer(yuv_buf_ref, dtype=np.uint8).reshape((h + h // 2, w))
             
             ref_bgr = cv2.cvtColor(yuv_data, cv2.COLOR_YUV2BGR_I420)
             
@@ -120,10 +142,67 @@ if __name__ == "__main__":
             # output['ssim'].append(0)
         
 
-    yuvfile.close()
-    yuvfile_ref.close()
-    # yuvfile_vmaf.close()
+    
+    if args.v:
+        # find the first and last non-None vmaf_data
+        start = -1
+        for i, vmaf in enumerate(vmaf_data):
+            if vmaf is not None:
+                if start == -1:
+                    start = i
+                end = i
+
+        print('start, end', start, end)
+        
+        # write vmaf_data to file
+        if args.v:
+            for i in range(start, end + 1):
+                if vmaf_data[i] is not None:
+                    yuvfile_vmaf.write(vmaf_data[i])
+                else:
+                    # last frame
+                    yuvfile_vmaf.write(vmaf_data[i - 1])
+                    vmaf_data[i] = vmaf_data[i - 1]
+                    
+            # write the reference file to the test file
+            
+            yuvfile_ref.seek(start * h * w * 3//2, 0)
+            for i in range(start, end + 1):
+                yuv_buf_ref = yuvfile_ref.read(h*w*3//2)
+                yuvfile_vmaf_test.write(yuv_buf_ref)
+            
+            yuvfile_vmaf_test.close()
+            yuvfile_vmaf.close()
+        
+        yuvfile.close()
+        yuvfile_ref.close()
+
+    
+    
+    
+    if args.v:
+        import os
+        
+        # encode {ref_yuv_file} and {yuvfile_vmaf_test_name} to mp4
+        os.system(f"/home/xiangjie/Mahimahi-Test/ffmpeg/ok/ffmpeg -s {w}x{h} -i {ref_yuv_file} -c:v libx264 -profile:v high -level 4.1 -pix_fmt yuv420p -r 30 -y ref.mp4")
+        os.system(f"/home/xiangjie/Mahimahi-Test/ffmpeg/ok/ffmpeg -s {w}x{h} -i {yuvfile_vmaf_test_name} -c:v libx264 -profile:v high -level 4.1 -pix_fmt yuv420p -r 30 -y test.mp4")
+        # compare vmaf
+        os.system(f"/home/xiangjie/Mahimahi-Test/ffmpeg/ok/ffmpeg -s {w}x{h} -i {yuvfile_vmaf_test_name} -s {w}x{h} -i {ref_yuv_file} -lavfi libvmaf -f null - 2> temp_vmaf.log")
+        
+        # delete vmaf yuv file
+        os.system(f"rm -f {ref_yuv_file}")
+        os.system(f"rm -f {yuvfile_vmaf_test_name}")
+        
+        with open('temp_vmaf.log') as f:
+            lines = f.readlines()
+            for line in lines:
+                if 'VMAF score' in line:
+                    print(line)
+                    output['vmaf'] = float(line.split(' ')[-1])
+                    break
+            else:
+                output['vmaf'] = None
+    
     import json
     with open(output_name, 'w') as f:
         json.dump(output, f)
-    

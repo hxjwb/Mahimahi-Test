@@ -10,3 +10,6 @@ log_*
 *_1
 *.png
 *.pdf
+chrome-linux64/*
+compete_stream/*
+ffmpeg/*

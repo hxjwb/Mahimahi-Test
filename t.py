@@ -74,6 +74,31 @@ def change_vbv(c):
     file.writelines(lines)
     file.close()
 
+
+def change_cbr(c):
+    cc_path = "/home/xiangjie/sparkrtc/modules/video_coding/codecs/h264/h264_encoder_impl.cc"
+    file = open(cc_path, "r")
+    lines = file.readlines()
+    file.close()
+    
+    index = -1
+    for line in lines:
+        if '#define CBR' in line and '//' not in line:
+            print(lines.index(line))
+            index = lines.index(line)
+    
+    # if not found
+    if index == -1:
+        exit(1)
+    lines[index] = f'#define CBR {c}\n'
+
+
+    # write to cc file
+    file = open(cc_path, "w")
+    file.writelines(lines)
+    file.close()
+
+
 def change_factor(c):
     cc_path = "/home/xiangjie/sparkrtc/video/video_stream_encoder.cc"
     file = open(cc_path, "r")
@@ -107,16 +132,28 @@ def change_pace(pace):
     file.close()
 
 
+    # index = -1
+    # for line in lines:
+    #     if 'pacing_factor_ = ' in line and '//' not in line:
+    #         print(lines.index(line))
+    #         index = lines.index(line)
+    # if pace:
+    #     lines[index] = '  pacing_factor_ = 1.0f;\n'
+    # else:
+    #     lines[index] = '  pacing_factor_ = 100.0f;\n'
+
+    
     index = -1
     for line in lines:
-        if 'pacing_factor_ = ' in line and '//' not in line:
+        if 'pacing_factor_ =' in line and '//' not in line:
             print(lines.index(line))
             index = lines.index(line)
-    if pace:
-        lines[index] = '  pacing_factor_ = 1.0f;\n'
-    else:
-        lines[index] = '  pacing_factor_ = 100.0f;\n'
-
+    
+    # if not found
+    if index == -1:
+        exit(1)
+    lines[index] = f'  pacing_factor_ = {pace}.0f;\n'
+    
     # write to cc file
     file = open(cc_path, "w")
     file.writelines(lines)
@@ -167,7 +204,7 @@ def run2(name):
     
     os.system("python3 run.py")
     
-    os.system(f"sudo cp -r archive/{name} /var/www/html/t2/{name}")
+    # os.system(f"sudo cp -r archive/{name} /var/www/html/t2/")
     
     
 
@@ -239,10 +276,50 @@ if __name__ == "__main__":
     
     
     # CBR real 
-    change_pace(False)
-    change_vbv(1)
+    # change_pace(False)
+    # change_vbv(1)
     
+    # change_vbv(1)
+    # change_cbr(1)
+    # compile()
+    # run2("CBR0429")
+    
+    # change_cbr(0)
+    # change_vbv(3)
+    # compile()
+    # run2("VBV_3")
+    
+    
+    # change_cbr(0)
+    # change_pace(100)
+    # change_vbv(3)
+    # compile()
+    # run2("Pacing")
+    
+    change_cbr(0)
+    change_vbv(20)
+    change_pace(100)
+    change_factor("1.0")
     compile()
-    run2("CBR_real")
+    run2("networking")
+    
+    
+    # change_cbr(0)
+    # change_vbv(10)
+    # compile()
+    # run2("VBV_10")
+    
+    # for i in range(7, 15, 2):
+    #     change_cbr(1)
+    #     change_vbv(1)
+    #     change_factor(str(i/10))
+    #     compile()
+    #     run2(f"CBR_factor_{str(i/10)}")
+        
+    # change_vbv(1)
+    # change_cbr(1)
+    # compile()
+    # run2("CBR0429")
+    
     
     

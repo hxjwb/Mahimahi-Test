@@ -78,7 +78,7 @@ if __name__ == "__main__":
     cmd_sender = f"{bin_path}/peerconnection_localvideo --file {video_file} --width {w} --height {h} --fps {fps} --logname {logsend} 2>send_stderr.log "
     
 
-    cmd_receiver = f"mm-link {trace_up} {trace_down} --downlink-log=logs/mah.log --downlink-queue=droptail --downlink-queue-args=packets={queue_size}"
+    cmd_receiver = f"mm-link {trace_up} {trace_down} --downlink-log=logs/mah.log --downlink-queue=droptail --downlink-queue-args=packets={queue_size} > out.log"
     # cmd_receiver = "mm-lo dss downlink 0.1"
     # cmd_receiver = "mm-delay 1000"
     rec_process = start_process(cmd_receiver, 'logs/receiver_process_debug.log')
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     rec_process.stdin.write(input_line.encode())
     rec_process.stdin.flush()
     
-    input_line = f"{bin_path}/peerconnection_localvideo --recon {recon_file} --server 100.64.0.1 --logname {logrecv} 2> recv_stderr.log\n" # 
+    input_line = f"{bin_path}/peerconnection_localvideo --recon {recon_file} --server 100.64.0.1 --logname {logrecv} 2> recv_stderr.log &\n" # 
     rec_process.stdin.write(input_line.encode())
     rec_process.stdin.flush()
     
@@ -97,8 +97,18 @@ if __name__ == "__main__":
     time.sleep(1)
     sen_process = start_process(cmd_sender, 'logs/sender_process_debug.log')
 
+    time.sleep(3)
+    
+    # add compete stream
+    url = "www.pornhub.com"
+    input_line = f"python3 sel.py --url https://{url}\n"
+    rec_process.stdin.write(input_line.encode())
+    rec_process.stdin.flush()
+    
+    
     # wait for sender to finish
     sen_process.wait()
+    
     
     
     
@@ -122,7 +132,10 @@ if __name__ == "__main__":
     os.system(f"cp {recon_file} archive/{test_name}/{timestamp}/")
     
     # remove {recon_file}
+
+    os.system(f"x264 --input-res {w}x{h} --fps {fps} --preset ultrafast --crf 15 {recon_file} -o archive/{test_name}/{timestamp}/recon_archive.bin")
     os.system(f"rm -f {recon_file}")
+    
     
     os.system(f'python3 neweva.py --path archive/{test_name}/{timestamp}')
     

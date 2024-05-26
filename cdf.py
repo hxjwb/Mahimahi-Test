@@ -2,12 +2,11 @@
 
 def get_CDF(name, values, labels):
     
+    for i in range(len(values)):
+        values[i] = [v for v in values[i] if v != None and 20 < v < 50]
     for l in values:
         l.sort()
     
-    # delete less than 10 and more than 50
-    for i in range(len(values)):
-        values[i] = [v for v in values[i] if v >= 10 and v <= 50]
         
     # draw cdf
     import matplotlib as mpl
@@ -93,18 +92,18 @@ if __name__ == '__main__':
     
     psnrs = []
     
-    ssims = []
+    # ssims = []
     
     labels = []
     for j in jsons:
-        labels.append(j.split('/')[-1].split('.')[0])
+        labels.append(j.split('/')[1])
     
     for j in jsons:
         with open(j, 'r') as f:
             data = json.load(f)
             
             psnrs.append(data['psnr'][4:])
-            ssims.append(data['ssim'])
+            # ssims.append(data['ssim'])
             
     get_CDF(name, psnrs, labels)
 
