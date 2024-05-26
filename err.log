@@ -1,0 +1,2 @@
+/home/xiangjie/Mahimahi-Test/sel.py:36: DeprecationWarning: use options instead of chrome_options
+  driver = webdriver.Chrome(path, chrome_options=options)
