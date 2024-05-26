@@ -133,20 +133,13 @@ if __name__ == '__main__':
                         mode='lines',
                         name='Queueing Packets'))
 
-    # bar x2 y2 调整柱子宽度为较宽
+    # bar x2 y2 
     fig.add_trace(go.Bar(x=x2, y=y2, name='Frame Packets', width=1000))
 
 
 
-    # scatter x3 y3
-    fig.add_trace(go.Scatter(x=x3, y=y3,
-                        mode='lines',
-                        name='Dropped Packets',
-                        marker=dict(
-                            size=10,
-                            color='red',
-                            symbol='x'
-                        )))
+    # bar x3 y3 
+    fig.add_trace(go.Bar(x=x3, y=y3, name='Dropped Packets', width=1000))
     
 
     # y range 0-1000
